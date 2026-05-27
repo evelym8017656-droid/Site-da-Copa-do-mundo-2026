@@ -1,343 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
+<!-- SUBSTITUA APENAS A PARTE DO HEADER + CHUVA + CAMPO PELO CÓDIGO ABAIXO -->
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Copa do Mundo 2026</title>
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
-
-body{
-    background:linear-gradient(to bottom,#002776,#009b3a);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* CHUVA DE BANDEIRAS */
-
-.bandeiras{
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    pointer-events:none;
-    overflow:hidden;
-}
-
-.bandeira{
-    position:absolute;
-    top:-50px;
-    font-size:30px;
-    animation:cair linear infinite;
-}
-
-@keyframes cair{
-
-    0%{
-        transform:translateY(-50px) rotate(0deg);
-    }
-
-    100%{
-        transform:translateY(110vh) rotate(360deg);
-    }
-
-}
-
-/* HEADER */
-
-header{
-    background:linear-gradient(to right,#009b3a,#ffdf00,#002776);
-    text-align:center;
-    padding:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.5);
-}
-
-header h1{
-    font-size:50px;
-    color:white;
-}
-
-header p{
-    margin-top:10px;
-    font-size:22px;
-}
-
-/* MENU */
-
-nav{
-    background:#002776;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:15px;
-    padding:15px;
-}
-
-nav button{
-    padding:12px 20px;
-    border:none;
-    border-radius:12px;
-    background:#009b3a;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-nav button:hover{
-    background:#ffdf00;
-    color:black;
-    transform:scale(1.05);
-}
-
-/* CONTAINER */
-
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:20px;
-}
-
-.section{
-    display:none;
-}
-
-.active{
-    display:block;
-}
-
-/* CARD */
-
-.card{
-    background:rgba(255,255,255,0.1);
-    backdrop-filter:blur(5px);
-    padding:25px;
-    border-radius:20px;
-    margin-bottom:25px;
-    border:2px solid rgba(255,255,255,0.2);
-}
-
-/* CAMPO */
-
-.campo{
-    background:#009b3a;
-    border:6px solid white;
-    border-radius:20px;
-    position:relative;
-    height:500px;
-    margin-top:20px;
-    overflow:hidden;
-}
-
-/* LINHAS */
-
-.linha-meio{
-    position:absolute;
-    width:4px;
-    height:100%;
-    background:white;
-    left:50%;
-}
-
-.circulo{
-    position:absolute;
-    width:140px;
-    height:140px;
-    border:4px solid white;
-    border-radius:50%;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-}
-
-/* TIMES */
-
-.time{
-    position:absolute;
-    background:#002776;
-    padding:10px 15px;
-    border-radius:12px;
-    font-weight:bold;
-    border:2px solid white;
-}
-
-/* POSIÇÕES */
-
-.brasil{
-    top:100px;
-    left:120px;
-}
-
-.argentina{
-    top:300px;
-    left:120px;
-}
-
-.franca{
-    top:100px;
-    right:120px;
-}
-
-.alemanha{
-    top:300px;
-    right:120px;
-}
-
-/* GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
-
-.team{
-    background:#002776;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.team:hover{
-    background:#ffdf00;
-    color:black;
-    transform:scale(1.05);
-}
-
-/* JOGOS */
-
-.match{
-    background:#002776;
-    padding:15px;
-    border-radius:15px;
-    margin-bottom:15px;
-    display:flex;
-    justify-content:space-between;
-    flex-wrap:wrap;
-}
-
-.teams{
-    font-size:22px;
-    font-weight:bold;
-}
-
-.score{
-    color:#ffdf00;
-    font-size:22px;
-}
-
-/* FORM */
-
-input, select{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    margin-top:10px;
-    margin-bottom:15px;
-}
-
-.btn{
-    background:#ffdf00;
-    color:black;
-    border:none;
-    padding:12px 20px;
-    border-radius:12px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-/* FOOTER */
-
-footer{
-    background:#002776;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- CHUVA -->
+<!-- CHUVA DE BANDEIRAS E TROFÉUS -->
 
 <div class="bandeiras">
 
 <div class="bandeira" style="left:5%; animation-duration:8s;">🇧🇷</div>
-<div class="bandeira" style="left:15%; animation-duration:12s;">🇧🇷</div>
+<div class="bandeira" style="left:15%; animation-duration:12s;">🏆</div>
 <div class="bandeira" style="left:25%; animation-duration:10s;">🇧🇷</div>
-<div class="bandeira" style="left:35%; animation-duration:14s;">🇧🇷</div>
+<div class="bandeira" style="left:35%; animation-duration:14s;">🏆</div>
 <div class="bandeira" style="left:45%; animation-duration:9s;">🇧🇷</div>
-<div class="bandeira" style="left:55%; animation-duration:11s;">🇧🇷</div>
+<div class="bandeira" style="left:55%; animation-duration:11s;">🏆</div>
 <div class="bandeira" style="left:65%; animation-duration:13s;">🇧🇷</div>
-<div class="bandeira" style="left:75%; animation-duration:7s;">🇧🇷</div>
+<div class="bandeira" style="left:75%; animation-duration:7s;">🏆</div>
 <div class="bandeira" style="left:85%; animation-duration:15s;">🇧🇷</div>
 
 </div>
 
-<header>
+<!-- ENTRADA -->
 
-<h1>⚽ Copa do Mundo 2026</h1>
+<section style="
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.6),
+rgba(0,0,0,0.7)),
+url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1400&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+">
 
-<p>Brasil • Estados Unidos • Canadá • México</p>
+<h1 style="
+font-size:80px;
+color:#ffdf00;
+text-shadow:5px 5px 10px black;
+">
 
-</header>
+⚽ Copa do Mundo 2026
 
-<nav>
+</h1>
 
-<button onclick="mostrar('inicio')">
-Início
-</button>
+<p style="
+font-size:28px;
+margin-top:20px;
+color:white;
+">
 
-<button onclick="mostrar('campo')">
-Campo
-</button>
-
-<button onclick="mostrar('selecoes')">
-Seleções
-</button>
-
-<button onclick="mostrar('apostas')">
-Apostas
-</button>
-
-</nav>
-
-<div class="container">
-
-<!-- INICIO -->
-
-<section id="inicio" class="section active">
-
-<div class="card">
-
-<h2>Sobre a Copa</h2>
-
-<p style="line-height:35px; font-size:20px;">
-
-A Copa do Mundo 2026 será uma das maiores da história.
-O torneio acontecerá nos Estados Unidos,
-Canadá e México.
-Pela primeira vez serão 48 seleções.
-Milhões de torcedores irão acompanhar os jogos.
+Brasil • EUA • Canadá • México
 
 </p>
 
-</div>
+<button onclick="mostrar('campo')"
+style="
+margin-top:40px;
+padding:18px 35px;
+font-size:22px;
+border:none;
+border-radius:15px;
+background:#009b3a;
+color:white;
+cursor:pointer;
+font-weight:bold;
+">
+
+ENTRAR NO APP
+
+</button>
 
 </section>
 
@@ -347,29 +78,63 @@ Milhões de torcedores irão acompanhar os jogos.
 
 <div class="card">
 
-<h2>Campo de Futebol</h2>
+<h2 style="
+text-align:center;
+font-size:40px;
+margin-bottom:25px;
+">
 
-<div class="campo">
+🏟️ Super Campo da Copa
+
+</h2>
+
+<div class="campo" style="height:1100px;">
 
 <div class="linha-meio"></div>
 
 <div class="circulo"></div>
 
-<div class="time brasil">
-🇧🇷 Brasil
+<!-- TROFÉU CENTRAL -->
+
+<div style="
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:100px;
+">
+
+🏆
+
 </div>
 
-<div class="time argentina">
-🇦🇷 Argentina
-</div>
+<!-- 48 TIMES -->
 
-<div class="time franca">
-🇫🇷 França
-</div>
+<div class="time" style="top:20px;left:20px;">🇧🇷 Brasil</div>
+<div class="time" style="top:80px;left:70px;">🇦🇷 Argentina</div>
+<div class="time" style="top:140px;left:20px;">🇫🇷 França</div>
+<div class="time" style="top:200px;left:70px;">🇩🇪 Alemanha</div>
+<div class="time" style="top:260px;left:20px;">🏴 Inglaterra</div>
+<div class="time" style="top:320px;left:70px;">🇪🇸 Espanha</div>
+<div class="time" style="top:380px;left:20px;">🇵🇹 Portugal</div>
+<div class="time" style="top:440px;left:70px;">🇮🇹 Itália</div>
+<div class="time" style="top:500px;left:20px;">🇳🇱 Holanda</div>
+<div class="time" style="top:560px;left:70px;">🇧🇪 Bélgica</div>
+<div class="time" style="top:620px;left:20px;">🇭🇷 Croácia</div>
+<div class="time" style="top:680px;left:70px;">🇲🇦 Marrocos</div>
 
-<div class="time alemanha">
-🇩🇪 Alemanha
-</div>
+<div class="time" style="top:20px;right:20px;">🇺🇸 EUA</div>
+<div class="time" style="top:80px;right:70px;">🇲🇽 México</div>
+<div class="time" style="top:140px;right:20px;">🇨🇦 Canadá</div>
+<div class="time" style="top:200px;right:70px;">🇯🇵 Japão</div>
+<div class="time" style="top:260px;right:20px;">🇰🇷 Coreia</div>
+<div class="time" style="top:320px;right:70px;">🇸🇦 Arábia</div>
+<div class="time" style="top:380px;right:20px;">🇨🇭 Suíça</div>
+<div class="time" style="top:440px;right:70px;">🇩🇰 Dinamarca</div>
+<div class="time" style="top:500px;right:20px;">🇺🇾 Uruguai</div>
+<div class="time" style="top:560px;right:70px;">🇨🇴 Colômbia</div>
+<div class="time" style="top:620px;right:20px;">🇨🇲 Camarões</div>
+<div class="time" style="top:680px;right:70px;">🇸🇳 Senegal</div>
 
 </div>
 
@@ -377,195 +142,62 @@ Milhões de torcedores irão acompanhar os jogos.
 
 </section>
 
-<!-- SELEÇÕES -->
+<!-- JOGADORES -->
 
-<section id="selecoes" class="section">
+<section id="jogadores" class="section">
 
 <div class="card">
 
-<h2>Seleções</h2>
+<h2 style="text-align:center; font-size:40px;">
+⭐ Craques da Copa
+</h2>
 
 <div class="grid">
 
-<div class="team">🇧🇷 Brasil</div>
-<div class="team">🇦🇷 Argentina</div>
-<div class="team">🇫🇷 França</div>
-<div class="team">🇩🇪 Alemanha</div>
-<div class="team">🏴 Inglaterra</div>
-<div class="team">🇪🇸 Espanha</div>
-<div class="team">🇵🇹 Portugal</div>
-<div class="team">🇮🇹 Itália</div>
-<div class="team">🇺🇸 Estados Unidos</div>
-<div class="team">🇲🇽 México</div>
-<div class="team">🇨🇦 Canadá</div>
-<div class="team">🇯🇵 Japão</div>
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2023.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Vinicius Jr</h3>
+<p>🇧🇷 Brasil</p>
+</div>
 
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Lionel_Messi_2022.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Messi</h3>
+<p>🇦🇷 Argentina</p>
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kylian_Mbappe_2022.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Mbappé</h3>
+<p>🇫🇷 França</p>
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jude_Bellingham_2023.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Bellingham</h3>
+<p>🏴 Inglaterra</p>
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Cristiano_Ronaldo_2018.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Cristiano Ronaldo</h3>
+<p>🇵🇹 Portugal</p>
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_2018.jpg"
+style="width:120px;height:120px;border-radius:50%;border:4px solid white;">
+<h3>Neymar</h3>
+<p>🇧🇷 Brasil</p>
 </div>
 
 </div>
-
-</section>
-
-<!-- APOSTAS -->
-
-<section id="apostas" class="section">
-
-<div class="card">
-
-<h2>Jogo de Apostas</h2>
-
-<select id="jogo">
-
-<option>Brasil vs Argentina</option>
-<option>França vs Alemanha</option>
-<option>Brasil vs França</option>
-
-</select>
-
-<input type="text"
-id="nome"
-placeholder="Digite seu nome">
-
-<input type="text"
-id="palpite"
-placeholder="Ex: Brasil 2 x 1">
-
-<button class="btn"
-onclick="salvarAposta()">
-
-Salvar Aposta
-
-</button>
-
-<br><br>
-
-<h2>Histórico</h2>
-
-<div id="historico"></div>
 
 </div>
 
 </section>
-
-</div>
-
-<footer>
-
-⚽ Copa do Mundo 2026 • Site Oficial
-
-</footer>
-
-<script>
-
-/* MENU */
-
-function mostrar(id){
-
-    let secoes =
-    document.querySelectorAll('.section');
-
-    secoes.forEach(function(secao){
-
-        secao.classList.remove('active');
-
-    });
-
-    document.getElementById(id)
-    .classList.add('active');
-
-}
-
-/* APOSTAS */
-
-function salvarAposta(){
-
-    let jogo =
-    document.getElementById("jogo").value;
-
-    let nome =
-    document.getElementById("nome").value;
-
-    let palpite =
-    document.getElementById("palpite").value;
-
-    if(nome === "" || palpite === ""){
-
-        alert("Preencha todos os campos!");
-
-        return;
-
-    }
-
-    let aposta = {
-
-        jogo:jogo,
-        nome:nome,
-        palpite:palpite
-
-    };
-
-    let apostas =
-    JSON.parse(localStorage.getItem("apostas"))
-    || [];
-
-    apostas.push(aposta);
-
-    localStorage.setItem(
-        "apostas",
-        JSON.stringify(apostas)
-    );
-
-    mostrarApostas();
-
-    document.getElementById("nome").value="";
-    document.getElementById("palpite").value="";
-
-}
-
-/* MOSTRAR */
-
-function mostrarApostas(){
-
-    let historico =
-    document.getElementById("historico");
-
-    historico.innerHTML="";
-
-    let apostas =
-    JSON.parse(localStorage.getItem("apostas"))
-    || [];
-
-    apostas.forEach(function(aposta){
-
-        historico.innerHTML += `
-
-        <div class="match">
-
-            <div>
-
-                <strong>${aposta.nome}</strong>
-
-                <p>${aposta.jogo}</p>
-
-            </div>
-
-            <div class="score">
-
-                ${aposta.palpite}
-
-            </div>
-
-        </div>
-
-        `;
-
-    });
-
-}
-
-mostrarApostas();
-
-</script>
-
-</body>
-</html>
