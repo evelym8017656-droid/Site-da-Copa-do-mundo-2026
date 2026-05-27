@@ -12,47 +12,48 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#04111f,#0c1f3f);
+    background:linear-gradient(to right,#021526,#0b2447);
     color:white;
 }
 
 /* HEADER */
 
 header{
-    background:linear-gradient(to right,#e10600,#ff3c00);
-    padding:25px;
+    background:linear-gradient(to right,#ff0000,#ff7300);
     text-align:center;
-    font-size:40px;
-    font-weight:bold;
-    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+    padding:30px;
+}
+
+header h1{
+    font-size:50px;
 }
 
 header p{
-    font-size:18px;
     margin-top:10px;
     color:#ffe082;
+    font-size:20px;
 }
 
 /* MENU */
 
 nav{
+    background:#071a2f;
+    padding:15px;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
-    gap:15px;
-    padding:20px;
-    background:#08152b;
+    gap:10px;
 }
 
 nav button{
-    padding:12px 22px;
+    padding:12px 20px;
     border:none;
-    border-radius:12px;
-    background:#14294a;
+    border-radius:10px;
+    background:#12345a;
     color:white;
     font-weight:bold;
     cursor:pointer;
@@ -60,8 +61,7 @@ nav button{
 }
 
 nav button:hover{
-    background:#e10600;
-    transform:scale(1.05);
+    background:#ff0000;
 }
 
 /* CONTAINER */
@@ -78,48 +78,55 @@ nav button:hover{
 
 .active{
     display:block;
-    animation:fade .5s;
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* CARDS */
+/* CARD */
 
 .card{
     background:#10213f;
     padding:25px;
-    border-radius:18px;
+    border-radius:20px;
     margin-bottom:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
-h2{
-    margin-bottom:20px;
+.card h2{
     color:#ffd700;
+    margin-bottom:20px;
 }
 
-/* MATCH */
+/* TIMES */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.team{
+    background:#183153;
+    padding:15px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.team:hover{
+    background:#ff0000;
+    transform:scale(1.05);
+}
+
+/* JOGOS */
 
 .match{
-    background:#182d52;
+    background:#183153;
     padding:18px;
-    border-radius:14px;
+    border-radius:15px;
     margin-bottom:15px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     flex-wrap:wrap;
-    gap:10px;
 }
 
 .teams{
@@ -127,69 +134,10 @@ h2{
     font-weight:bold;
 }
 
-.status{
-    color:#cfd8dc;
-    margin-top:5px;
-}
-
 .score{
-    font-size:22px;
     color:#00ff88;
+    font-size:22px;
     font-weight:bold;
-}
-
-/* GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:18px;
-}
-
-.player-card{
-    background:#182d52;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.player-card:hover{
-    transform:translateY(-6px);
-    background:#e10600;
-}
-
-.player-card img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    object-fit:cover;
-    margin-bottom:15px;
-    border:3px solid white;
-}
-
-/* TABELA */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-}
-
-th, td{
-    padding:12px;
-    text-align:center;
-}
-
-th{
-    background:#e10600;
-}
-
-tr:nth-child(even){
-    background:#1b2d4f;
-}
-
-tr:nth-child(odd){
-    background:#122340;
 }
 
 /* FORM */
@@ -197,46 +145,53 @@ tr:nth-child(odd){
 input, select{
     width:100%;
     padding:12px;
-    margin-top:10px;
-    margin-bottom:15px;
     border:none;
     border-radius:10px;
-    background:#09172d;
+    margin-top:10px;
+    margin-bottom:15px;
+    background:#081526;
     color:white;
 }
 
 .btn{
-    background:#e10600;
+    background:#ff0000;
     color:white;
     border:none;
     padding:12px 20px;
-    border-radius:12px;
+    border-radius:10px;
     cursor:pointer;
     font-weight:bold;
-    transition:0.3s;
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    background:#ff7300;
+}
+
+/* CONTADOR */
+
+#contador{
+    margin-top:15px;
+    font-size:28px;
+    color:#00ff88;
+    font-weight:bold;
 }
 
 /* FOOTER */
 
 footer{
-    background:#08152b;
+    background:#071a2f;
     text-align:center;
     padding:20px;
-    color:#b0bec5;
     margin-top:40px;
+    color:#ccc;
 }
-
-/* RESPONSIVO */
 
 @media(max-width:700px){
 
     .match{
         flex-direction:column;
         text-align:center;
+        gap:10px;
     }
 
 }
@@ -249,39 +204,23 @@ footer{
 
 <header>
 
-⚽ Copa do Mundo 2026
+<h1>⚽ Copa do Mundo 2026</h1>
 
-<p>
-Estados Unidos • Canadá • México
-</p>
+<p>Estados Unidos • Canadá • México</p>
+
+<div id="contador"></div>
 
 </header>
 
 <nav>
 
-<button onclick="showSection('inicio')">
-Início
-</button>
+<button onclick="mostrar('inicio')">Início</button>
 
-<button onclick="showSection('jogos')">
-Jogos
-</button>
+<button onclick="mostrar('times')">48 Seleções</button>
 
-<button onclick="showSection('jogadores')">
-Jogadores
-</button>
+<button onclick="mostrar('jogos')">Jogos</button>
 
-<button onclick="showSection('grupos')">
-Grupos
-</button>
-
-<button onclick="showSection('campeoes')">
-Campeões
-</button>
-
-<button onclick="showSection('apostas')">
-Apostas
-</button>
+<button onclick="mostrar('apostas')">Apostas</button>
 
 </nav>
 
@@ -293,18 +232,84 @@ Apostas
 
 <div class="card">
 
-<h2>Sobre a Copa 2026</h2>
+<h2>Sobre a Copa do Mundo 2026</h2>
 
-<p style="line-height:30px;">
+<p style="line-height:35px; font-size:20px;">
 
-A Copa do Mundo de 2026 será uma das maiores da história do futebol.
+A Copa do Mundo 2026 será a maior Copa da história.
 O torneio será realizado em três países:
 Estados Unidos, Canadá e México.
-A competição contará com 48 seleções e milhares de torcedores do mundo inteiro.
-Grandes craques como Vinicius Jr, Mbappé, Messi e Bellingham devem participar.
-A expectativa é de jogos emocionantes, muitos gols e estádios lotados.
+Pela primeira vez a competição terá 48 seleções.
+Grandes craques como Vinicius Jr, Mbappé,
+Messi, Haaland e Bellingham devem jogar.
+Milhões de torcedores irão acompanhar
+os jogos e os estádios estarão lotados.
 
 </p>
+
+</div>
+
+</section>
+
+<!-- TIMES -->
+
+<section id="times" class="section">
+
+<div class="card">
+
+<h2>48 Seleções da Copa 2026</h2>
+
+<div class="grid">
+
+<div class="team">🇧🇷 Brasil</div>
+<div class="team">🇦🇷 Argentina</div>
+<div class="team">🇫🇷 França</div>
+<div class="team">🇩🇪 Alemanha</div>
+<div class="team">🏴 Inglaterra</div>
+<div class="team">🇪🇸 Espanha</div>
+<div class="team">🇵🇹 Portugal</div>
+<div class="team">🇮🇹 Itália</div>
+<div class="team">🇳🇱 Holanda</div>
+<div class="team">🇧🇪 Bélgica</div>
+<div class="team">🇭🇷 Croácia</div>
+<div class="team">🇺🇸 Estados Unidos</div>
+<div class="team">🇲🇽 México</div>
+<div class="team">🇨🇦 Canadá</div>
+<div class="team">🇯🇵 Japão</div>
+<div class="team">🇰🇷 Coreia do Sul</div>
+<div class="team">🇸🇦 Arábia Saudita</div>
+<div class="team">🇵🇱 Polônia</div>
+<div class="team">🇷🇸 Sérvia</div>
+<div class="team">🇨🇭 Suíça</div>
+<div class="team">🇩🇰 Dinamarca</div>
+<div class="team">🇸🇪 Suécia</div>
+<div class="team">🇺🇾 Uruguai</div>
+<div class="team">🇨🇴 Colômbia</div>
+<div class="team">🇨🇱 Chile</div>
+<div class="team">🇪🇨 Equador</div>
+<div class="team">🇵🇪 Peru</div>
+<div class="team">🇵🇾 Paraguai</div>
+<div class="team">🇨🇲 Camarões</div>
+<div class="team">🇲🇦 Marrocos</div>
+<div class="team">🇸🇳 Senegal</div>
+<div class="team">🇬🇭 Gana</div>
+<div class="team">🇳🇬 Nigéria</div>
+<div class="team">🇪🇬 Egito</div>
+<div class="team">🇦🇺 Austrália</div>
+<div class="team">🇳🇿 Nova Zelândia</div>
+<div class="team">🇹🇷 Turquia</div>
+<div class="team">🇺🇦 Ucrânia</div>
+<div class="team">🇦🇹 Áustria</div>
+<div class="team">🇷🇴 Romênia</div>
+<div class="team">🇨🇿 República Tcheca</div>
+<div class="team">🇮🇷 Irã</div>
+<div class="team">🇶🇦 Catar</div>
+<div class="team">🇹🇳 Tunísia</div>
+<div class="team">🇩🇿 Argélia</div>
+<div class="team">🇨🇷 Costa Rica</div>
+<div class="team">🇵🇦 Panamá</div>
+
+</div>
 
 </div>
 
@@ -320,194 +325,24 @@ A expectativa é de jogos emocionantes, muitos gols e estádios lotados.
 
 <div class="match">
 
-<div>
-
 <div class="teams">
-🇧🇷 Brasil vs 🇷🇸 Sérvia
-</div>
-
-<div class="status">
-15/06/2026 • 16:00
-</div>
-
+🇧🇷 Brasil vs 🇦🇷 Argentina
 </div>
 
 <div class="score">
-Em breve
+18:00
 </div>
 
 </div>
 
 <div class="match">
-
-<div>
-
-<div class="teams">
-🇦🇷 Argentina vs 🇲🇽 México
-</div>
-
-<div class="status">
-16/06/2026 • 18:00
-</div>
-
-</div>
-
-<div class="score">
-Em breve
-</div>
-
-</div>
-
-<div class="match">
-
-<div>
 
 <div class="teams">
 🇫🇷 França vs 🇩🇪 Alemanha
 </div>
 
-<div class="status">
-17/06/2026 • 20:00
-</div>
-
-</div>
-
 <div class="score">
-Em breve
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- JOGADORES -->
-
-<section id="jogadores" class="section">
-
-<div class="card">
-
-<h2>Principais Jogadores</h2>
-
-<div class="grid">
-
-<div class="player-card">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2023.jpg">
-
-<h3>Vinicius Jr</h3>
-
-<p>Brasil</p>
-
-</div>
-
-<div class="player-card">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Lionel_Messi_2022.jpg">
-
-<h3>Messi</h3>
-
-<p>Argentina</p>
-
-</div>
-
-<div class="player-card">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kylian_Mbappe_2022.jpg">
-
-<h3>Mbappé</h3>
-
-<p>França</p>
-
-</div>
-
-<div class="player-card">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jude_Bellingham_2023.jpg">
-
-<h3>Bellingham</h3>
-
-<p>Inglaterra</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- GRUPOS -->
-
-<section id="grupos" class="section">
-
-<div class="card">
-
-<h2>Fase de Grupos</h2>
-
-<table>
-
-<tr>
-
-<th>Grupo</th>
-
-<th>Seleções</th>
-
-</tr>
-
-<tr>
-
-<td>A</td>
-
-<td>
-🇧🇷 Brasil • 🇷🇸 Sérvia • 🇨🇦 Canadá • 🇯🇵 Japão
-</td>
-
-</tr>
-
-<tr>
-
-<td>B</td>
-
-<td>
-🇦🇷 Argentina • 🇲🇽 México • 🇵🇱 Polônia • 🇸🇦 Arábia Saudita
-</td>
-
-</tr>
-
-<tr>
-
-<td>C</td>
-
-<td>
-🇫🇷 França • 🇩🇪 Alemanha • 🇨🇭 Suíça • 🇨🇲 Camarões
-</td>
-
-</tr>
-
-</table>
-
-</div>
-
-</section>
-
-<!-- CAMPEOES -->
-
-<section id="campeoes" class="section">
-
-<div class="card">
-
-<h2>Últimos Campeões</h2>
-
-<div class="match">
-
-<div class="teams">
-🇦🇷 Argentina
-</div>
-
-<div class="score">
-2022
+20:00
 </div>
 
 </div>
@@ -515,35 +350,11 @@ Em breve
 <div class="match">
 
 <div class="teams">
-🇫🇷 França
+🏴 Inglaterra vs 🇪🇸 Espanha
 </div>
 
 <div class="score">
-2018
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="teams">
-🇩🇪 Alemanha
-</div>
-
-<div class="score">
-2014
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="teams">
-🇪🇸 Espanha
-</div>
-
-<div class="score">
-2010
+16:00
 </div>
 
 </div>
@@ -562,11 +373,9 @@ Em breve
 
 <select id="jogo">
 
-<option>Brasil vs Sérvia</option>
-
-<option>Argentina vs México</option>
-
+<option>Brasil vs Argentina</option>
 <option>França vs Alemanha</option>
+<option>Inglaterra vs Espanha</option>
 
 </select>
 
@@ -576,10 +385,13 @@ placeholder="Digite seu nome">
 
 <input type="text"
 id="palpite"
-placeholder="Ex: Brasil 3 x 1">
+placeholder="Ex: Brasil 2 x 1">
 
-<button class="btn" onclick="salvarAposta()">
+<button class="btn"
+onclick="salvarAposta()">
+
 Salvar Aposta
+
 </button>
 
 <br><br>
@@ -596,25 +408,50 @@ Salvar Aposta
 
 <footer>
 
-Site desenvolvido sobre a Copa do Mundo 2026 ⚽
+⚽ Site Completo da Copa do Mundo 2026
 
 </footer>
 
 <script>
 
-function showSection(sectionId){
+/* MENU */
+
+function mostrar(id){
 
     const sections =
     document.querySelectorAll('.section');
 
-    sections.forEach(section => {
+    sections.forEach(section=>{
         section.classList.remove('active');
     });
 
-    document.getElementById(sectionId)
+    document.getElementById(id)
     .classList.add('active');
 
 }
+
+/* CONTADOR */
+
+const dataCopa =
+new Date("June 11, 2026 00:00:00").getTime();
+
+setInterval(()=>{
+
+    const agora =
+    new Date().getTime();
+
+    const distancia =
+    dataCopa - agora;
+
+    const dias =
+    Math.floor(distancia /
+    (1000*60*60*24));
+
+    document.getElementById("contador")
+    .innerHTML =
+    "Faltam " + dias + " dias para a Copa";
+
+},1000);
 
 /* APOSTAS */
 
@@ -629,9 +466,9 @@ function salvarAposta(){
     const palpite =
     document.getElementById('palpite').value;
 
-    if(nome == '' || palpite == ''){
+    if(nome == "" || palpite == ""){
 
-        alert('Preencha todos os campos!');
+        alert("Preencha todos os campos!");
         return;
 
     }
@@ -655,23 +492,25 @@ function salvarAposta(){
 
     mostrarApostas();
 
-    document.getElementById('nome').value = '';
-    document.getElementById('palpite').value = '';
+    document.getElementById('nome').value="";
+    document.getElementById('palpite').value="";
 
 }
+
+/* MOSTRAR APOSTAS */
 
 function mostrarApostas(){
 
     const historico =
     document.getElementById('historico');
 
+    historico.innerHTML = "";
+
     let apostas =
     JSON.parse(localStorage.getItem('apostas'))
     || [];
 
-    historico.innerHTML = '';
-
-    apostas.forEach(aposta => {
+    apostas.forEach(aposta=>{
 
         historico.innerHTML += `
 
@@ -681,7 +520,7 @@ function mostrarApostas(){
 
                 <strong>${aposta.nome}</strong>
 
-                <div class="status">
+                <div>
                     ${aposta.jogo}
                 </div>
 
