@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
@@ -22,7 +23,75 @@ body{
     overflow-x:hidden;
 }
 
-/* CHUVA DE BANDEIRAS */
+/* ENTRADA LED */
+
+.tela-entrada{
+    position:fixed;
+    width:100%;
+    height:100vh;
+    background:linear-gradient(
+    to bottom,
+    #002776,
+    #009b3a,
+    #ffdf00
+    );
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.led-box{
+    text-align:center;
+    animation:zoom 2s infinite alternate;
+}
+
+.led-texto{
+    font-size:70px;
+    color:#fff;
+    text-shadow:
+    0 0 10px #fff,
+    0 0 20px #ffdf00,
+    0 0 40px #ffdf00,
+    0 0 60px #009b3a;
+    margin-bottom:20px;
+}
+
+.led-sub{
+    font-size:28px;
+    color:white;
+    margin-bottom:30px;
+}
+
+.btn-entrar{
+    background:#ffdf00;
+    color:black;
+    border:none;
+    padding:18px 40px;
+    border-radius:15px;
+    font-size:22px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.btn-entrar:hover{
+    transform:scale(1.1);
+    background:white;
+}
+
+@keyframes zoom{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.05);
+    }
+
+}
+
+/* CHUVA */
 
 .bandeiras{
     position:fixed;
@@ -64,7 +133,6 @@ header{
 
 header h1{
     font-size:50px;
-    color:white;
 }
 
 header p{
@@ -91,19 +159,17 @@ nav button{
     color:white;
     font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
 }
 
 nav button:hover{
     background:#ffdf00;
     color:black;
-    transform:scale(1.05);
 }
 
 /* CONTAINER */
 
 .container{
-    max-width:1200px;
+    max-width:1400px;
     margin:auto;
     padding:20px;
 }
@@ -134,12 +200,10 @@ nav button:hover{
     border:6px solid white;
     border-radius:20px;
     position:relative;
-    height:500px;
+    height:700px;
     margin-top:20px;
     overflow:hidden;
 }
-
-/* LINHAS */
 
 .linha-meio{
     position:absolute;
@@ -165,54 +229,11 @@ nav button:hover{
 .time{
     position:absolute;
     background:#002776;
-    padding:10px 15px;
+    padding:8px 12px;
     border-radius:12px;
     font-weight:bold;
     border:2px solid white;
-}
-
-/* POSIÇÕES */
-
-.brasil{
-    top:100px;
-    left:120px;
-}
-
-.argentina{
-    top:300px;
-    left:120px;
-}
-
-.franca{
-    top:100px;
-    right:120px;
-}
-
-.alemanha{
-    top:300px;
-    right:120px;
-}
-
-/* GRID */
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
-}
-
-.team{
-    background:#002776;
-    padding:15px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
-
-.team:hover{
-    background:#ffdf00;
-    color:black;
-    transform:scale(1.05);
+    font-size:14px;
 }
 
 /* JOGOS */
@@ -225,11 +246,6 @@ nav button:hover{
     display:flex;
     justify-content:space-between;
     flex-wrap:wrap;
-}
-
-.teams{
-    font-size:22px;
-    font-weight:bold;
 }
 
 .score{
@@ -273,19 +289,44 @@ footer{
 
 <body>
 
+<!-- ENTRADA -->
+
+<div class="tela-entrada" id="entrada">
+
+    <div class="led-box">
+
+        <h1 class="led-texto">
+            ⚽ COPA DO MUNDO 2026 ⚽
+        </h1>
+
+        <p class="led-sub">
+            Brasil • EUA • Canadá • México
+        </p>
+
+        <button class="btn-entrar"
+        onclick="entrarSite()">
+
+            ENTRAR
+
+        </button>
+
+    </div>
+
+</div>
+
 <!-- CHUVA -->
 
 <div class="bandeiras">
 
-<div class="bandeira" style="left:5%; animation-duration:8s;">🇧🇷</div>
-<div class="bandeira" style="left:15%; animation-duration:12s;">🇧🇷</div>
-<div class="bandeira" style="left:25%; animation-duration:10s;">🇧🇷</div>
-<div class="bandeira" style="left:35%; animation-duration:14s;">🇧🇷</div>
-<div class="bandeira" style="left:45%; animation-duration:9s;">🇧🇷</div>
-<div class="bandeira" style="left:55%; animation-duration:11s;">🇧🇷</div>
-<div class="bandeira" style="left:65%; animation-duration:13s;">🇧🇷</div>
-<div class="bandeira" style="left:75%; animation-duration:7s;">🇧🇷</div>
-<div class="bandeira" style="left:85%; animation-duration:15s;">🇧🇷</div>
+<div class="bandeira" style="left:5%; animation-duration:8s;">🇧🇷 🏆</div>
+<div class="bandeira" style="left:15%; animation-duration:12s;">🏆 🇧🇷</div>
+<div class="bandeira" style="left:25%; animation-duration:10s;">🇧🇷 🏆</div>
+<div class="bandeira" style="left:35%; animation-duration:14s;">🏆 🇧🇷</div>
+<div class="bandeira" style="left:45%; animation-duration:9s;">🇧🇷 🏆</div>
+<div class="bandeira" style="left:55%; animation-duration:11s;">🏆 🇧🇷</div>
+<div class="bandeira" style="left:65%; animation-duration:13s;">🇧🇷 🏆</div>
+<div class="bandeira" style="left:75%; animation-duration:7s;">🏆 🇧🇷</div>
+<div class="bandeira" style="left:85%; animation-duration:15s;">🇧🇷 🏆</div>
 
 </div>
 
@@ -305,10 +346,6 @@ Início
 
 <button onclick="mostrar('campo')">
 Campo
-</button>
-
-<button onclick="mostrar('selecoes')">
-Seleções
 </button>
 
 <button onclick="mostrar('apostas')">
@@ -347,58 +384,66 @@ Milhões de torcedores irão acompanhar os jogos.
 
 <div class="card">
 
-<h2>Campo de Futebol</h2>
+<h2>⚽ Campo com 48 Seleções</h2>
 
 <div class="campo">
 
 <div class="linha-meio"></div>
-
 <div class="circulo"></div>
 
-<div class="time brasil">
-🇧🇷 Brasil
-</div>
+<div class="time" style="top:20px; left:20px;">🇧🇷 Brasil</div>
+<div class="time" style="top:20px; left:180px;">🇦🇷 Argentina</div>
+<div class="time" style="top:20px; left:340px;">🇫🇷 França</div>
+<div class="time" style="top:20px; left:500px;">🇩🇪 Alemanha</div>
+<div class="time" style="top:20px; left:660px;">🏴 Inglaterra</div>
+<div class="time" style="top:20px; left:820px;">🇪🇸 Espanha</div>
 
-<div class="time argentina">
-🇦🇷 Argentina
-</div>
+<div class="time" style="top:90px; left:20px;">🇵🇹 Portugal</div>
+<div class="time" style="top:90px; left:180px;">🇮🇹 Itália</div>
+<div class="time" style="top:90px; left:340px;">🇺🇸 EUA</div>
+<div class="time" style="top:90px; left:500px;">🇲🇽 México</div>
+<div class="time" style="top:90px; left:660px;">🇨🇦 Canadá</div>
+<div class="time" style="top:90px; left:820px;">🇯🇵 Japão</div>
 
-<div class="time franca">
-🇫🇷 França
-</div>
+<div class="time" style="top:160px; left:20px;">🇰🇷 Coreia</div>
+<div class="time" style="top:160px; left:180px;">🇸🇦 Arábia</div>
+<div class="time" style="top:160px; left:340px;">🇵🇱 Polônia</div>
+<div class="time" style="top:160px; left:500px;">🇷🇸 Sérvia</div>
+<div class="time" style="top:160px; left:660px;">🇨🇭 Suíça</div>
+<div class="time" style="top:160px; left:820px;">🇩🇰 Dinamarca</div>
 
-<div class="time alemanha">
-🇩🇪 Alemanha
-</div>
+<div class="time" style="top:230px; left:20px;">🇺🇾 Uruguai</div>
+<div class="time" style="top:230px; left:180px;">🇨🇴 Colômbia</div>
+<div class="time" style="top:230px; left:340px;">🇨🇱 Chile</div>
+<div class="time" style="top:230px; left:500px;">🇪🇨 Equador</div>
+<div class="time" style="top:230px; left:660px;">🇵🇾 Paraguai</div>
+<div class="time" style="top:230px; left:820px;">🇨🇲 Camarões</div>
 
-</div>
+<div class="time" style="top:300px; left:20px;">🇲🇦 Marrocos</div>
+<div class="time" style="top:300px; left:180px;">🇸🇳 Senegal</div>
+<div class="time" style="top:300px; left:340px;">🇬🇭 Gana</div>
+<div class="time" style="top:300px; left:500px;">🇳🇬 Nigéria</div>
+<div class="time" style="top:300px; left:660px;">🇪🇬 Egito</div>
+<div class="time" style="top:300px; left:820px;">🇦🇺 Austrália</div>
 
-</div>
+<div class="time" style="top:370px; left:20px;">🇳🇿 Nova Zelândia</div>
+<div class="time" style="top:370px; left:180px;">🇹🇷 Turquia</div>
+<div class="time" style="top:370px; left:340px;">🇺🇦 Ucrânia</div>
+<div class="time" style="top:370px; left:500px;">🇦🇹 Áustria</div>
+<div class="time" style="top:370px; left:660px;">🇷🇴 Romênia</div>
+<div class="time" style="top:370px; left:820px;">🇨🇿 Tcheca</div>
 
-</section>
+<div class="time" style="top:440px; left:20px;">🇮🇷 Irã</div>
+<div class="time" style="top:440px; left:180px;">🇶🇦 Catar</div>
+<div class="time" style="top:440px; left:340px;">🇹🇳 Tunísia</div>
+<div class="time" style="top:440px; left:500px;">🇩🇿 Argélia</div>
+<div class="time" style="top:440px; left:660px;">🇨🇷 Costa Rica</div>
+<div class="time" style="top:440px; left:820px;">🇵🇦 Panamá</div>
 
-<!-- SELEÇÕES -->
-
-<section id="selecoes" class="section">
-
-<div class="card">
-
-<h2>Seleções</h2>
-
-<div class="grid">
-
-<div class="team">🇧🇷 Brasil</div>
-<div class="team">🇦🇷 Argentina</div>
-<div class="team">🇫🇷 França</div>
-<div class="team">🇩🇪 Alemanha</div>
-<div class="team">🏴 Inglaterra</div>
-<div class="team">🇪🇸 Espanha</div>
-<div class="team">🇵🇹 Portugal</div>
-<div class="team">🇮🇹 Itália</div>
-<div class="team">🇺🇸 Estados Unidos</div>
-<div class="team">🇲🇽 México</div>
-<div class="team">🇨🇦 Canadá</div>
-<div class="team">🇯🇵 Japão</div>
+<div class="time" style="top:510px; left:180px;">🇸🇪 Suécia</div>
+<div class="time" style="top:510px; left:340px;">🇭🇷 Croácia</div>
+<div class="time" style="top:510px; left:500px;">🇵🇪 Peru</div>
+<div class="time" style="top:510px; left:660px;">🇬🇷 Grécia</div>
 
 </div>
 
@@ -412,7 +457,7 @@ Milhões de torcedores irão acompanhar os jogos.
 
 <div class="card">
 
-<h2>Jogo de Apostas</h2>
+<h2>🏆 Jogo de Apostas</h2>
 
 <select id="jogo">
 
@@ -456,6 +501,15 @@ Salvar Aposta
 </footer>
 
 <script>
+
+/* ENTRAR */
+
+function entrarSite(){
+
+    document.getElementById("entrada")
+    .style.display = "none";
+
+}
 
 /* MENU */
 
@@ -568,4 +622,5 @@ mostrarApostas();
 </script>
 
 </body>
+
 </html>
