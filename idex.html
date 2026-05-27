@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,25 +18,24 @@
 }
 
 body{
-    background:linear-gradient(to right,#021526,#0b2447);
+    background:#0b2447;
     color:white;
 }
 
-/* HEADER */
+/* TOPO */
 
 header{
     background:linear-gradient(to right,#ff0000,#ff7300);
-    text-align:center;
     padding:30px;
+    text-align:center;
 }
 
 header h1{
-    font-size:50px;
+    font-size:45px;
 }
 
 header p{
     margin-top:10px;
-    color:#ffe082;
     font-size:20px;
 }
 
@@ -45,8 +46,8 @@ nav{
     padding:15px;
     display:flex;
     justify-content:center;
+    gap:15px;
     flex-wrap:wrap;
-    gap:10px;
 }
 
 nav button{
@@ -55,13 +56,12 @@ nav button{
     border-radius:10px;
     background:#12345a;
     color:white;
-    font-weight:bold;
     cursor:pointer;
-    transition:0.3s;
+    font-weight:bold;
 }
 
 nav button:hover{
-    background:#ff0000;
+    background:red;
 }
 
 /* CONTAINER */
@@ -85,17 +85,11 @@ nav button:hover{
 .card{
     background:#10213f;
     padding:25px;
-    border-radius:20px;
+    border-radius:15px;
     margin-bottom:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
-.card h2{
-    color:#ffd700;
-    margin-bottom:20px;
-}
-
-/* TIMES */
+/* GRID */
 
 .grid{
     display:grid;
@@ -106,13 +100,13 @@ nav button:hover{
 .team{
     background:#183153;
     padding:15px;
-    border-radius:15px;
+    border-radius:12px;
     text-align:center;
     transition:0.3s;
 }
 
 .team:hover{
-    background:#ff0000;
+    background:red;
     transform:scale(1.05);
 }
 
@@ -120,12 +114,11 @@ nav button:hover{
 
 .match{
     background:#183153;
-    padding:18px;
-    border-radius:15px;
+    padding:15px;
+    border-radius:12px;
     margin-bottom:15px;
     display:flex;
     justify-content:space-between;
-    align-items:center;
     flex-wrap:wrap;
 }
 
@@ -137,7 +130,6 @@ nav button:hover{
 .score{
     color:#00ff88;
     font-size:22px;
-    font-weight:bold;
 }
 
 /* FORM */
@@ -149,30 +141,15 @@ input, select{
     border-radius:10px;
     margin-top:10px;
     margin-bottom:15px;
-    background:#081526;
-    color:white;
 }
 
 .btn{
-    background:#ff0000;
+    background:red;
     color:white;
     border:none;
     padding:12px 20px;
     border-radius:10px;
     cursor:pointer;
-    font-weight:bold;
-}
-
-.btn:hover{
-    background:#ff7300;
-}
-
-/* CONTADOR */
-
-#contador{
-    margin-top:15px;
-    font-size:28px;
-    color:#00ff88;
     font-weight:bold;
 }
 
@@ -183,17 +160,6 @@ footer{
     text-align:center;
     padding:20px;
     margin-top:40px;
-    color:#ccc;
-}
-
-@media(max-width:700px){
-
-    .match{
-        flex-direction:column;
-        text-align:center;
-        gap:10px;
-    }
-
 }
 
 </style>
@@ -208,19 +174,25 @@ footer{
 
 <p>Estados Unidos • Canadá • México</p>
 
-<div id="contador"></div>
-
 </header>
 
 <nav>
 
-<button onclick="mostrar('inicio')">Início</button>
+<button onclick="mostrar('inicio')">
+Início
+</button>
 
-<button onclick="mostrar('times')">48 Seleções</button>
+<button onclick="mostrar('selecoes')">
+48 Seleções
+</button>
 
-<button onclick="mostrar('jogos')">Jogos</button>
+<button onclick="mostrar('jogos')">
+Jogos
+</button>
 
-<button onclick="mostrar('apostas')">Apostas</button>
+<button onclick="mostrar('apostas')">
+Apostas
+</button>
 
 </nav>
 
@@ -232,18 +204,16 @@ footer{
 
 <div class="card">
 
-<h2>Sobre a Copa do Mundo 2026</h2>
+<h2>Sobre a Copa</h2>
 
 <p style="line-height:35px; font-size:20px;">
 
-A Copa do Mundo 2026 será a maior Copa da história.
-O torneio será realizado em três países:
-Estados Unidos, Canadá e México.
-Pela primeira vez a competição terá 48 seleções.
-Grandes craques como Vinicius Jr, Mbappé,
-Messi, Haaland e Bellingham devem jogar.
+A Copa do Mundo 2026 será a maior da história.
+O torneio acontecerá nos Estados Unidos,
+Canadá e México.
+Pela primeira vez serão 48 seleções.
 Milhões de torcedores irão acompanhar
-os jogos e os estádios estarão lotados.
+os jogos da competição.
 
 </p>
 
@@ -251,13 +221,13 @@ os jogos e os estádios estarão lotados.
 
 </section>
 
-<!-- TIMES -->
+<!-- SELECOES -->
 
-<section id="times" class="section">
+<section id="selecoes" class="section">
 
 <div class="card">
 
-<h2>48 Seleções da Copa 2026</h2>
+<h2>48 Seleções</h2>
 
 <div class="grid">
 
@@ -271,7 +241,6 @@ os jogos e os estádios estarão lotados.
 <div class="team">🇮🇹 Itália</div>
 <div class="team">🇳🇱 Holanda</div>
 <div class="team">🇧🇪 Bélgica</div>
-<div class="team">🇭🇷 Croácia</div>
 <div class="team">🇺🇸 Estados Unidos</div>
 <div class="team">🇲🇽 México</div>
 <div class="team">🇨🇦 Canadá</div>
@@ -282,12 +251,10 @@ os jogos e os estádios estarão lotados.
 <div class="team">🇷🇸 Sérvia</div>
 <div class="team">🇨🇭 Suíça</div>
 <div class="team">🇩🇰 Dinamarca</div>
-<div class="team">🇸🇪 Suécia</div>
 <div class="team">🇺🇾 Uruguai</div>
 <div class="team">🇨🇴 Colômbia</div>
 <div class="team">🇨🇱 Chile</div>
 <div class="team">🇪🇨 Equador</div>
-<div class="team">🇵🇪 Peru</div>
 <div class="team">🇵🇾 Paraguai</div>
 <div class="team">🇨🇲 Camarões</div>
 <div class="team">🇲🇦 Marrocos</div>
@@ -308,6 +275,10 @@ os jogos e os estádios estarão lotados.
 <div class="team">🇩🇿 Argélia</div>
 <div class="team">🇨🇷 Costa Rica</div>
 <div class="team">🇵🇦 Panamá</div>
+<div class="team">🇸🇪 Suécia</div>
+<div class="team">🇭🇷 Croácia</div>
+<div class="team">🇵🇪 Peru</div>
+<div class="team">🇬🇷 Grécia</div>
 
 </div>
 
@@ -396,7 +367,7 @@ Salvar Aposta
 
 <br><br>
 
-<h2>Histórico de Apostas</h2>
+<h2>Histórico</h2>
 
 <div id="historico"></div>
 
@@ -408,7 +379,7 @@ Salvar Aposta
 
 <footer>
 
-⚽ Site Completo da Copa do Mundo 2026
+⚽ Copa do Mundo 2026
 
 </footer>
 
@@ -418,11 +389,13 @@ Salvar Aposta
 
 function mostrar(id){
 
-    const sections =
+    let secoes =
     document.querySelectorAll('.section');
 
-    sections.forEach(section=>{
-        section.classList.remove('active');
+    secoes.forEach(function(secao){
+
+        secao.classList.remove('active');
+
     });
 
     document.getElementById(id)
@@ -430,87 +403,67 @@ function mostrar(id){
 
 }
 
-/* CONTADOR */
-
-const dataCopa =
-new Date("June 11, 2026 00:00:00").getTime();
-
-setInterval(()=>{
-
-    const agora =
-    new Date().getTime();
-
-    const distancia =
-    dataCopa - agora;
-
-    const dias =
-    Math.floor(distancia /
-    (1000*60*60*24));
-
-    document.getElementById("contador")
-    .innerHTML =
-    "Faltam " + dias + " dias para a Copa";
-
-},1000);
-
 /* APOSTAS */
 
 function salvarAposta(){
 
-    const jogo =
-    document.getElementById('jogo').value;
+    let jogo =
+    document.getElementById("jogo").value;
 
-    const nome =
-    document.getElementById('nome').value;
+    let nome =
+    document.getElementById("nome").value;
 
-    const palpite =
-    document.getElementById('palpite').value;
+    let palpite =
+    document.getElementById("palpite").value;
 
-    if(nome == "" || palpite == ""){
+    if(nome === "" || palpite === ""){
 
         alert("Preencha todos os campos!");
+
         return;
 
     }
 
-    const aposta = {
-        jogo,
-        nome,
-        palpite
+    let aposta = {
+
+        jogo:jogo,
+        nome:nome,
+        palpite:palpite
+
     };
 
     let apostas =
-    JSON.parse(localStorage.getItem('apostas'))
+    JSON.parse(localStorage.getItem("apostas"))
     || [];
 
     apostas.push(aposta);
 
     localStorage.setItem(
-        'apostas',
+        "apostas",
         JSON.stringify(apostas)
     );
 
     mostrarApostas();
 
-    document.getElementById('nome').value="";
-    document.getElementById('palpite').value="";
+    document.getElementById("nome").value = "";
+    document.getElementById("palpite").value = "";
 
 }
 
-/* MOSTRAR APOSTAS */
+/* MOSTRAR */
 
 function mostrarApostas(){
 
-    const historico =
-    document.getElementById('historico');
+    let historico =
+    document.getElementById("historico");
 
     historico.innerHTML = "";
 
     let apostas =
-    JSON.parse(localStorage.getItem('apostas'))
+    JSON.parse(localStorage.getItem("apostas"))
     || [];
 
-    apostas.forEach(aposta=>{
+    apostas.forEach(function(aposta){
 
         historico.innerHTML += `
 
@@ -520,14 +473,14 @@ function mostrarApostas(){
 
                 <strong>${aposta.nome}</strong>
 
-                <div>
-                    ${aposta.jogo}
-                </div>
+                <p>${aposta.jogo}</p>
 
             </div>
 
             <div class="score">
+
                 ${aposta.palpite}
+
             </div>
 
         </div>
@@ -543,4 +496,5 @@ mostrarApostas();
 </script>
 
 </body>
+
 </html>
