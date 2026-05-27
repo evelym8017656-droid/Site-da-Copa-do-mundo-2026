@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Copa do Mundo 2026</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#04111f,#0c1f3f);
+    color:white;
+}
+
+/* HEADER */
+
+header{
+    background:linear-gradient(to right,#e10600,#ff3c00);
+    padding:25px;
+    text-align:center;
+    font-size:40px;
+    font-weight:bold;
+    box-shadow:0 4px 10px rgba(0,0,0,0.5);
+}
+
+header p{
+    font-size:18px;
+    margin-top:10px;
+    color:#ffe082;
+}
+
+/* MENU */
+
+nav{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    padding:20px;
+    background:#08152b;
+}
+
+nav button{
+    padding:12px 22px;
+    border:none;
+    border-radius:12px;
+    background:#14294a;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav button:hover{
+    background:#e10600;
+    transform:scale(1.05);
+}
+
+/* CONTAINER */
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.section{
+    display:none;
+}
+
+.active{
+    display:block;
+    animation:fade .5s;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CARDS */
+
+.card{
+    background:#10213f;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+h2{
+    margin-bottom:20px;
+    color:#ffd700;
+}
+
+/* MATCH */
+
+.match{
+    background:#182d52;
+    padding:18px;
+    border-radius:14px;
+    margin-bottom:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.teams{
+    font-size:22px;
+    font-weight:bold;
+}
+
+.status{
+    color:#cfd8dc;
+    margin-top:5px;
+}
+
+.score{
+    font-size:22px;
+    color:#00ff88;
+    font-weight:bold;
+}
+
+/* GRID */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
+
+.player-card{
+    background:#182d52;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.player-card:hover{
+    transform:translateY(-6px);
+    background:#e10600;
+}
+
+.player-card img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:3px solid white;
+}
+
+/* TABELA */
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th, td{
+    padding:12px;
+    text-align:center;
+}
+
+th{
+    background:#e10600;
+}
+
+tr:nth-child(even){
+    background:#1b2d4f;
+}
+
+tr:nth-child(odd){
+    background:#122340;
+}
+
+/* FORM */
+
+input, select{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:15px;
+    border:none;
+    border-radius:10px;
+    background:#09172d;
+    color:white;
+}
+
+.btn{
+    background:#e10600;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
+}
+
+/* FOOTER */
+
+footer{
+    background:#08152b;
+    text-align:center;
+    padding:20px;
+    color:#b0bec5;
+    margin-top:40px;
+}
+
+/* RESPONSIVO */
+
+@media(max-width:700px){
+
+    .match{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+⚽ Copa do Mundo 2026
+
+<p>
+Estados Unidos • Canadá • México
+</p>
+
+</header>
+
+<nav>
+
+<button onclick="showSection('inicio')">
+Início
+</button>
+
+<button onclick="showSection('jogos')">
+Jogos
+</button>
+
+<button onclick="showSection('jogadores')">
+Jogadores
+</button>
+
+<button onclick="showSection('grupos')">
+Grupos
+</button>
+
+<button onclick="showSection('campeoes')">
+Campeões
+</button>
+
+<button onclick="showSection('apostas')">
+Apostas
+</button>
+
+</nav>
+
+<div class="container">
+
+<!-- INICIO -->
+
+<section id="inicio" class="section active">
+
+<div class="card">
+
+<h2>Sobre a Copa 2026</h2>
+
+<p style="line-height:30px;">
+
+A Copa do Mundo de 2026 será uma das maiores da história do futebol.
+O torneio será realizado em três países:
+Estados Unidos, Canadá e México.
+A competição contará com 48 seleções e milhares de torcedores do mundo inteiro.
+Grandes craques como Vinicius Jr, Mbappé, Messi e Bellingham devem participar.
+A expectativa é de jogos emocionantes, muitos gols e estádios lotados.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- JOGOS -->
+
+<section id="jogos" class="section">
+
+<div class="card">
+
+<h2>Jogos da Semana</h2>
+
+<div class="match">
+
+<div>
+
+<div class="teams">
+🇧🇷 Brasil vs 🇷🇸 Sérvia
+</div>
+
+<div class="status">
+15/06/2026 • 16:00
+</div>
+
+</div>
+
+<div class="score">
+Em breve
+</div>
+
+</div>
+
+<div class="match">
+
+<div>
+
+<div class="teams">
+🇦🇷 Argentina vs 🇲🇽 México
+</div>
+
+<div class="status">
+16/06/2026 • 18:00
+</div>
+
+</div>
+
+<div class="score">
+Em breve
+</div>
+
+</div>
+
+<div class="match">
+
+<div>
+
+<div class="teams">
+🇫🇷 França vs 🇩🇪 Alemanha
+</div>
+
+<div class="status">
+17/06/2026 • 20:00
+</div>
+
+</div>
+
+<div class="score">
+Em breve
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- JOGADORES -->
+
+<section id="jogadores" class="section">
+
+<div class="card">
+
+<h2>Principais Jogadores</h2>
+
+<div class="grid">
+
+<div class="player-card">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2023.jpg">
+
+<h3>Vinicius Jr</h3>
+
+<p>Brasil</p>
+
+</div>
+
+<div class="player-card">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Lionel_Messi_2022.jpg">
+
+<h3>Messi</h3>
+
+<p>Argentina</p>
+
+</div>
+
+<div class="player-card">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kylian_Mbappe_2022.jpg">
+
+<h3>Mbappé</h3>
+
+<p>França</p>
+
+</div>
+
+<div class="player-card">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jude_Bellingham_2023.jpg">
+
+<h3>Bellingham</h3>
+
+<p>Inglaterra</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GRUPOS -->
+
+<section id="grupos" class="section">
+
+<div class="card">
+
+<h2>Fase de Grupos</h2>
+
+<table>
+
+<tr>
+
+<th>Grupo</th>
+
+<th>Seleções</th>
+
+</tr>
+
+<tr>
+
+<td>A</td>
+
+<td>
+🇧🇷 Brasil • 🇷🇸 Sérvia • 🇨🇦 Canadá • 🇯🇵 Japão
+</td>
+
+</tr>
+
+<tr>
+
+<td>B</td>
+
+<td>
+🇦🇷 Argentina • 🇲🇽 México • 🇵🇱 Polônia • 🇸🇦 Arábia Saudita
+</td>
+
+</tr>
+
+<tr>
+
+<td>C</td>
+
+<td>
+🇫🇷 França • 🇩🇪 Alemanha • 🇨🇭 Suíça • 🇨🇲 Camarões
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- CAMPEOES -->
+
+<section id="campeoes" class="section">
+
+<div class="card">
+
+<h2>Últimos Campeões</h2>
+
+<div class="match">
+
+<div class="teams">
+🇦🇷 Argentina
+</div>
+
+<div class="score">
+2022
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="teams">
+🇫🇷 França
+</div>
+
+<div class="score">
+2018
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="teams">
+🇩🇪 Alemanha
+</div>
+
+<div class="score">
+2014
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="teams">
+🇪🇸 Espanha
+</div>
+
+<div class="score">
+2010
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- APOSTAS -->
+
+<section id="apostas" class="section">
+
+<div class="card">
+
+<h2>Jogo de Apostas</h2>
+
+<select id="jogo">
+
+<option>Brasil vs Sérvia</option>
+
+<option>Argentina vs México</option>
+
+<option>França vs Alemanha</option>
+
+</select>
+
+<input type="text"
+id="nome"
+placeholder="Digite seu nome">
+
+<input type="text"
+id="palpite"
+placeholder="Ex: Brasil 3 x 1">
+
+<button class="btn" onclick="salvarAposta()">
+Salvar Aposta
+</button>
+
+<br><br>
+
+<h2>Histórico de Apostas</h2>
+
+<div id="historico"></div>
+
+</div>
+
+</section>
+
+</div>
+
+<footer>
+
+Site desenvolvido sobre a Copa do Mundo 2026 ⚽
+
+</footer>
+
+<script>
+
+function showSection(sectionId){
+
+    const sections =
+    document.querySelectorAll('.section');
+
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document.getElementById(sectionId)
+    .classList.add('active');
+
+}
+
+/* APOSTAS */
+
+function salvarAposta(){
+
+    const jogo =
+    document.getElementById('jogo').value;
+
+    const nome =
+    document.getElementById('nome').value;
+
+    const palpite =
+    document.getElementById('palpite').value;
+
+    if(nome == '' || palpite == ''){
+
+        alert('Preencha todos os campos!');
+        return;
+
+    }
+
+    const aposta = {
+        jogo,
+        nome,
+        palpite
+    };
+
+    let apostas =
+    JSON.parse(localStorage.getItem('apostas'))
+    || [];
+
+    apostas.push(aposta);
+
+    localStorage.setItem(
+        'apostas',
+        JSON.stringify(apostas)
+    );
+
+    mostrarApostas();
+
+    document.getElementById('nome').value = '';
+    document.getElementById('palpite').value = '';
+
+}
+
+function mostrarApostas(){
+
+    const historico =
+    document.getElementById('historico');
+
+    let apostas =
+    JSON.parse(localStorage.getItem('apostas'))
+    || [];
+
+    historico.innerHTML = '';
+
+    apostas.forEach(aposta => {
+
+        historico.innerHTML += `
+
+        <div class="match">
+
+            <div>
+
+                <strong>${aposta.nome}</strong>
+
+                <div class="status">
+                    ${aposta.jogo}
+                </div>
+
+            </div>
+
+            <div class="score">
+                ${aposta.palpite}
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+mostrarApostas();
+
+</script>
+
+</body>
+</html>
