@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 
 <meta charset="UTF-8">
@@ -18,50 +17,87 @@
 }
 
 body{
-    background:#0b2447;
+    background:linear-gradient(to bottom,#002776,#009b3a);
     color:white;
+    overflow-x:hidden;
 }
 
-/* TOPO */
+/* CHUVA DE BANDEIRAS */
+
+.bandeiras{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.bandeira{
+    position:absolute;
+    top:-50px;
+    font-size:30px;
+    animation:cair linear infinite;
+}
+
+@keyframes cair{
+
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+    }
+
+}
+
+/* HEADER */
 
 header{
-    background:linear-gradient(to right,#ff0000,#ff7300);
-    padding:30px;
+    background:linear-gradient(to right,#009b3a,#ffdf00,#002776);
     text-align:center;
+    padding:30px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.5);
 }
 
 header h1{
-    font-size:45px;
+    font-size:50px;
+    color:white;
 }
 
 header p{
     margin-top:10px;
-    font-size:20px;
+    font-size:22px;
 }
 
 /* MENU */
 
 nav{
-    background:#071a2f;
-    padding:15px;
+    background:#002776;
     display:flex;
     justify-content:center;
-    gap:15px;
     flex-wrap:wrap;
+    gap:15px;
+    padding:15px;
 }
 
 nav button{
     padding:12px 20px;
     border:none;
-    border-radius:10px;
-    background:#12345a;
+    border-radius:12px;
+    background:#009b3a;
     color:white;
-    cursor:pointer;
     font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
 }
 
 nav button:hover{
-    background:red;
+    background:#ffdf00;
+    color:black;
+    transform:scale(1.05);
 }
 
 /* CONTAINER */
@@ -83,10 +119,78 @@ nav button:hover{
 /* CARD */
 
 .card{
-    background:#10213f;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(5px);
     padding:25px;
-    border-radius:15px;
+    border-radius:20px;
     margin-bottom:25px;
+    border:2px solid rgba(255,255,255,0.2);
+}
+
+/* CAMPO */
+
+.campo{
+    background:#009b3a;
+    border:6px solid white;
+    border-radius:20px;
+    position:relative;
+    height:500px;
+    margin-top:20px;
+    overflow:hidden;
+}
+
+/* LINHAS */
+
+.linha-meio{
+    position:absolute;
+    width:4px;
+    height:100%;
+    background:white;
+    left:50%;
+}
+
+.circulo{
+    position:absolute;
+    width:140px;
+    height:140px;
+    border:4px solid white;
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+}
+
+/* TIMES */
+
+.time{
+    position:absolute;
+    background:#002776;
+    padding:10px 15px;
+    border-radius:12px;
+    font-weight:bold;
+    border:2px solid white;
+}
+
+/* POSIÇÕES */
+
+.brasil{
+    top:100px;
+    left:120px;
+}
+
+.argentina{
+    top:300px;
+    left:120px;
+}
+
+.franca{
+    top:100px;
+    right:120px;
+}
+
+.alemanha{
+    top:300px;
+    right:120px;
 }
 
 /* GRID */
@@ -98,24 +202,25 @@ nav button:hover{
 }
 
 .team{
-    background:#183153;
+    background:#002776;
     padding:15px;
-    border-radius:12px;
+    border-radius:15px;
     text-align:center;
     transition:0.3s;
 }
 
 .team:hover{
-    background:red;
+    background:#ffdf00;
+    color:black;
     transform:scale(1.05);
 }
 
 /* JOGOS */
 
 .match{
-    background:#183153;
+    background:#002776;
     padding:15px;
-    border-radius:12px;
+    border-radius:15px;
     margin-bottom:15px;
     display:flex;
     justify-content:space-between;
@@ -128,7 +233,7 @@ nav button:hover{
 }
 
 .score{
-    color:#00ff88;
+    color:#ffdf00;
     font-size:22px;
 }
 
@@ -144,11 +249,11 @@ input, select{
 }
 
 .btn{
-    background:red;
-    color:white;
+    background:#ffdf00;
+    color:black;
     border:none;
     padding:12px 20px;
-    border-radius:10px;
+    border-radius:12px;
     cursor:pointer;
     font-weight:bold;
 }
@@ -156,7 +261,7 @@ input, select{
 /* FOOTER */
 
 footer{
-    background:#071a2f;
+    background:#002776;
     text-align:center;
     padding:20px;
     margin-top:40px;
@@ -168,11 +273,27 @@ footer{
 
 <body>
 
+<!-- CHUVA -->
+
+<div class="bandeiras">
+
+<div class="bandeira" style="left:5%; animation-duration:8s;">🇧🇷</div>
+<div class="bandeira" style="left:15%; animation-duration:12s;">🇧🇷</div>
+<div class="bandeira" style="left:25%; animation-duration:10s;">🇧🇷</div>
+<div class="bandeira" style="left:35%; animation-duration:14s;">🇧🇷</div>
+<div class="bandeira" style="left:45%; animation-duration:9s;">🇧🇷</div>
+<div class="bandeira" style="left:55%; animation-duration:11s;">🇧🇷</div>
+<div class="bandeira" style="left:65%; animation-duration:13s;">🇧🇷</div>
+<div class="bandeira" style="left:75%; animation-duration:7s;">🇧🇷</div>
+<div class="bandeira" style="left:85%; animation-duration:15s;">🇧🇷</div>
+
+</div>
+
 <header>
 
 <h1>⚽ Copa do Mundo 2026</h1>
 
-<p>Estados Unidos • Canadá • México</p>
+<p>Brasil • Estados Unidos • Canadá • México</p>
 
 </header>
 
@@ -182,12 +303,12 @@ footer{
 Início
 </button>
 
-<button onclick="mostrar('selecoes')">
-48 Seleções
+<button onclick="mostrar('campo')">
+Campo
 </button>
 
-<button onclick="mostrar('jogos')">
-Jogos
+<button onclick="mostrar('selecoes')">
+Seleções
 </button>
 
 <button onclick="mostrar('apostas')">
@@ -208,12 +329,11 @@ Apostas
 
 <p style="line-height:35px; font-size:20px;">
 
-A Copa do Mundo 2026 será a maior da história.
+A Copa do Mundo 2026 será uma das maiores da história.
 O torneio acontecerá nos Estados Unidos,
 Canadá e México.
 Pela primeira vez serão 48 seleções.
-Milhões de torcedores irão acompanhar
-os jogos da competição.
+Milhões de torcedores irão acompanhar os jogos.
 
 </p>
 
@@ -221,13 +341,49 @@ os jogos da competição.
 
 </section>
 
-<!-- SELECOES -->
+<!-- CAMPO -->
+
+<section id="campo" class="section">
+
+<div class="card">
+
+<h2>Campo de Futebol</h2>
+
+<div class="campo">
+
+<div class="linha-meio"></div>
+
+<div class="circulo"></div>
+
+<div class="time brasil">
+🇧🇷 Brasil
+</div>
+
+<div class="time argentina">
+🇦🇷 Argentina
+</div>
+
+<div class="time franca">
+🇫🇷 França
+</div>
+
+<div class="time alemanha">
+🇩🇪 Alemanha
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SELEÇÕES -->
 
 <section id="selecoes" class="section">
 
 <div class="card">
 
-<h2>48 Seleções</h2>
+<h2>Seleções</h2>
 
 <div class="grid">
 
@@ -239,94 +395,10 @@ os jogos da competição.
 <div class="team">🇪🇸 Espanha</div>
 <div class="team">🇵🇹 Portugal</div>
 <div class="team">🇮🇹 Itália</div>
-<div class="team">🇳🇱 Holanda</div>
-<div class="team">🇧🇪 Bélgica</div>
 <div class="team">🇺🇸 Estados Unidos</div>
 <div class="team">🇲🇽 México</div>
 <div class="team">🇨🇦 Canadá</div>
 <div class="team">🇯🇵 Japão</div>
-<div class="team">🇰🇷 Coreia do Sul</div>
-<div class="team">🇸🇦 Arábia Saudita</div>
-<div class="team">🇵🇱 Polônia</div>
-<div class="team">🇷🇸 Sérvia</div>
-<div class="team">🇨🇭 Suíça</div>
-<div class="team">🇩🇰 Dinamarca</div>
-<div class="team">🇺🇾 Uruguai</div>
-<div class="team">🇨🇴 Colômbia</div>
-<div class="team">🇨🇱 Chile</div>
-<div class="team">🇪🇨 Equador</div>
-<div class="team">🇵🇾 Paraguai</div>
-<div class="team">🇨🇲 Camarões</div>
-<div class="team">🇲🇦 Marrocos</div>
-<div class="team">🇸🇳 Senegal</div>
-<div class="team">🇬🇭 Gana</div>
-<div class="team">🇳🇬 Nigéria</div>
-<div class="team">🇪🇬 Egito</div>
-<div class="team">🇦🇺 Austrália</div>
-<div class="team">🇳🇿 Nova Zelândia</div>
-<div class="team">🇹🇷 Turquia</div>
-<div class="team">🇺🇦 Ucrânia</div>
-<div class="team">🇦🇹 Áustria</div>
-<div class="team">🇷🇴 Romênia</div>
-<div class="team">🇨🇿 República Tcheca</div>
-<div class="team">🇮🇷 Irã</div>
-<div class="team">🇶🇦 Catar</div>
-<div class="team">🇹🇳 Tunísia</div>
-<div class="team">🇩🇿 Argélia</div>
-<div class="team">🇨🇷 Costa Rica</div>
-<div class="team">🇵🇦 Panamá</div>
-<div class="team">🇸🇪 Suécia</div>
-<div class="team">🇭🇷 Croácia</div>
-<div class="team">🇵🇪 Peru</div>
-<div class="team">🇬🇷 Grécia</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- JOGOS -->
-
-<section id="jogos" class="section">
-
-<div class="card">
-
-<h2>Jogos da Semana</h2>
-
-<div class="match">
-
-<div class="teams">
-🇧🇷 Brasil vs 🇦🇷 Argentina
-</div>
-
-<div class="score">
-18:00
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="teams">
-🇫🇷 França vs 🇩🇪 Alemanha
-</div>
-
-<div class="score">
-20:00
-</div>
-
-</div>
-
-<div class="match">
-
-<div class="teams">
-🏴 Inglaterra vs 🇪🇸 Espanha
-</div>
-
-<div class="score">
-16:00
-</div>
 
 </div>
 
@@ -346,7 +418,7 @@ os jogos da competição.
 
 <option>Brasil vs Argentina</option>
 <option>França vs Alemanha</option>
-<option>Inglaterra vs Espanha</option>
+<option>Brasil vs França</option>
 
 </select>
 
@@ -379,7 +451,7 @@ Salvar Aposta
 
 <footer>
 
-⚽ Copa do Mundo 2026
+⚽ Copa do Mundo 2026 • Site Oficial
 
 </footer>
 
@@ -445,8 +517,8 @@ function salvarAposta(){
 
     mostrarApostas();
 
-    document.getElementById("nome").value = "";
-    document.getElementById("palpite").value = "";
+    document.getElementById("nome").value="";
+    document.getElementById("palpite").value="";
 
 }
 
@@ -457,7 +529,7 @@ function mostrarApostas(){
     let historico =
     document.getElementById("historico");
 
-    historico.innerHTML = "";
+    historico.innerHTML="";
 
     let apostas =
     JSON.parse(localStorage.getItem("apostas"))
@@ -496,5 +568,4 @@ mostrarApostas();
 </script>
 
 </body>
-
 </html>
