@@ -1,419 +1,175 @@
-```html
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Copa do Mundo 2026</title>
+<!-- COLE ESTE CÓDIGO DENTRO DA SECTION "CAMPO" -->
 
-<style>
+<section id="campo" class="section">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-}
+<div class="card">
 
-body{
-    background:#0b5d1e;
-    overflow-x:hidden;
-    color:white;
-}
+<h2>⚽ Campo da Copa do Mundo 2026</h2>
 
-/* FUNDO */
+<div class="campo">
 
-body::before{
-    content:"";
-    position:fixed;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop') center/cover;
-    filter:brightness(0.3);
-    z-index:-2;
-}
+<div class="linha-meio"></div>
 
-/* CHUVA */
+<div class="circulo"></div>
 
-.chuva{
-    position:fixed;
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:-1;
-}
+<!-- TIMES -->
 
-.item{
-    position:absolute;
-    top:-100px;
-    font-size:35px;
-    animation:cair linear infinite;
-}
+<div class="time" style="top:20px; left:30px;">🇧🇷 Brasil</div>
+<div class="time" style="top:70px; left:80px;">🇦🇷 Argentina</div>
+<div class="time" style="top:120px; left:40px;">🇫🇷 França</div>
+<div class="time" style="top:170px; left:90px;">🇩🇪 Alemanha</div>
+<div class="time" style="top:220px; left:30px;">🏴 Inglaterra</div>
+<div class="time" style="top:270px; left:90px;">🇪🇸 Espanha</div>
+<div class="time" style="top:320px; left:40px;">🇵🇹 Portugal</div>
+<div class="time" style="top:370px; left:100px;">🇮🇹 Itália</div>
 
-@keyframes cair{
+<div class="time" style="top:20px; right:30px;">🇺🇸 EUA</div>
+<div class="time" style="top:70px; right:80px;">🇲🇽 México</div>
+<div class="time" style="top:120px; right:40px;">🇨🇦 Canadá</div>
+<div class="time" style="top:170px; right:90px;">🇯🇵 Japão</div>
+<div class="time" style="top:220px; right:30px;">🇰🇷 Coreia</div>
+<div class="time" style="top:270px; right:90px;">🇳🇱 Holanda</div>
+<div class="time" style="top:320px; right:40px;">🇧🇪 Bélgica</div>
+<div class="time" style="top:370px; right:100px;">🇭🇷 Croácia</div>
 
-    0%{
-        transform:translateY(-100px) rotate(0deg);
-    }
+<!-- TROFÉU -->
 
-    100%{
-        transform:translateY(120vh) rotate(360deg);
-    }
-
-}
-
-/* ENTRADA */
-
-.entrada{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-direction:column;
-    text-align:center;
-    background:rgba(0,0,0,0.7);
-    position:relative;
-}
-
-.entrada::before{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:url('neyma') center/cover;
-    opacity:0.45;
-    z-index:-1;
-}
-
-.led{
-    font-size:90px;
-    font-weight:bold;
-    color:#ffffff;
-
-    text-shadow:
-    0 0 10px #ffffff,
-    0 0 20px #002776,
-    0 0 40px #002776,
-    0 0 60px #ffdf00,
-    0 0 80px #ffdf00;
-
-    animation:piscando 1s infinite alternate;
-}
-
-@keyframes piscando{
-
-    from{
-        opacity:0.7;
-    }
-
-    to{
-        opacity:1;
-    }
-
-}
-
-.sub{
-    margin-top:20px;
-    font-size:30px;
-    color:#ffdf00;
-    font-weight:bold;
-}
-
-.botoes{
-    margin-top:40px;
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.btn{
-    padding:18px 35px;
-    border:none;
-    border-radius:15px;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
-
-.btn-entrar{
-    background:#ffdf00;
-    color:black;
-}
-
-.btn-jogos{
-    background:#002776;
-    color:white;
-}
-
-.btn:hover{
-    transform:scale(1.1);
-}
-
-/* MENU */
-
-.menu{
-    background:#002776;
-    padding:20px;
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.menu button{
-    padding:12px 20px;
-    border:none;
-    border-radius:12px;
-    background:#ffdf00;
-    color:black;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* CONTAINER */
-
-.container{
-    max-width:1500px;
-    margin:auto;
-    padding:20px;
-}
-
-/* CARD */
-
-.card{
-    background:rgba(0,0,0,0.6);
-    padding:25px;
-    border-radius:20px;
-    margin-bottom:30px;
-    backdrop-filter:blur(5px);
-}
-
-/* CAMPO */
-
-.campo{
-    background:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1600&auto=format&fit=crop') center/cover;
-    border:6px solid white;
-    border-radius:20px;
-    min-height:1400px;
-    position:relative;
-    overflow:hidden;
-}
-
-/* TIMES */
-
-.time{
-    position:absolute;
-    width:100px;
-    text-align:center;
-    color:white;
-    font-size:12px;
-    font-weight:bold;
-}
-
-.time img{
-    width:70px;
-    height:70px;
-    border-radius:50%;
-    border:3px solid #ffdf00;
-    object-fit:cover;
-    margin-bottom:5px;
-}
-
-/* JOGOS */
-
-.jogos{
-    display:none;
-}
-
-.jogo{
-    background:#002776;
-    padding:20px;
-    border-radius:15px;
-    margin-top:15px;
-    font-size:22px;
-}
-
-footer{
-    background:#002776;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- CHUVA -->
-
-<div class="chuva">
-<div class="item" style="left:5%; animation-duration:8s;">🇧🇷</div>
-<div class="item" style="left:15%; animation-duration:12s;">🏆</div>
-<div class="item" style="left:25%; animation-duration:10s;">⚽</div>
-<div class="item" style="left:35%; animation-duration:14s;">🇦🇷</div>
-<div class="item" style="left:45%; animation-duration:9s;">🏆</div>
-<div class="item" style="left:55%; animation-duration:11s;">⚽</div>
-<div class="item" style="left:65%; animation-duration:13s;">🇫🇷</div>
-<div class="item" style="left:75%; animation-duration:7s;">🏆</div>
-<div class="item" style="left:85%; animation-duration:15s;">⚽</div>
+<div style="
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:80px;
+">
+🏆
 </div>
 
-<!-- ENTRADA -->
-
-<section class="entrada">
-
-<h1 class="led">
-⚽ COPA DO MUNDO 2026 ⚽
-</h1>
-
-<p class="sub">
-Brasil • Estados Unidos • Canadá • México
-</p>
-
-<div class="botoes">
-
-<button class="btn btn-entrar" onclick="entrarSite()">
-ENTRAR NO CAMPO
-</button>
-
-<button class="btn btn-jogos" onclick="mostrarJogos()">
-VER QUEM VAI JOGAR
-</button>
+</div>
 
 </div>
 
 </section>
 
-<!-- MENU -->
+<!-- COLE ESTE CÓDIGO DEPOIS DA SECTION CAMPO -->
 
-<div class="menu">
-<button onclick="window.scrollTo(0,0)">Início</button>
-<button onclick="document.getElementById('campo').scrollIntoView()">Campo</button>
-<button onclick="document.getElementById('jogos').scrollIntoView()">Jogos</button>
+<section id="titulos" class="section">
+
+<div class="card">
+
+<h2>🏆 Últimos Campeões</h2>
+
+<div class="match">
+
+<div class="teams">
+🇦🇷 Argentina
 </div>
 
-<div class="container">
-
-<!-- CAMPO -->
-
-<div class="card" id="campo">
-
-<h2 style="font-size:45px; text-align:center; color:#ffdf00;">
-🏆 Campo das 48 Seleções
-</h2>
-
-<br>
-
-<div class="campo">
-
-<!-- 48 TIMES -->
-
-<div class="time" style="top:20px; left:20px;"><img src="https://i.pravatar.cc/100?img=1">🇧🇷 Brasil</div>
-<div class="time" style="top:20px; left:150px;"><img src="https://i.pravatar.cc/100?img=2">🇦🇷 Argentina</div>
-<div class="time" style="top:20px; left:280px;"><img src="https://i.pravatar.cc/100?img=3">🇫🇷 França</div>
-<div class="time" style="top:20px; left:410px;"><img src="https://i.pravatar.cc/100?img=4">🇩🇪 Alemanha</div>
-<div class="time" style="top:20px; left:540px;"><img src="https://i.pravatar.cc/100?img=5">🏴 Inglaterra</div>
-<div class="time" style="top:20px; left:670px;"><img src="https://i.pravatar.cc/100?img=6">🇪🇸 Espanha</div>
-<div class="time" style="top:20px; left:800px;"><img src="https://i.pravatar.cc/100?img=7">🇵🇹 Portugal</div>
-<div class="time" style="top:20px; left:930px;"><img src="https://i.pravatar.cc/100?img=8">🇮🇹 Itália</div>
-
-<div class="time" style="top:190px; left:20px;"><img src="https://i.pravatar.cc/100?img=9">🇺🇸 EUA</div>
-<div class="time" style="top:190px; left:150px;"><img src="https://i.pravatar.cc/100?img=10">🇲🇽 México</div>
-<div class="time" style="top:190px; left:280px;"><img src="https://i.pravatar.cc/100?img=11">🇨🇦 Canadá</div>
-<div class="time" style="top:190px; left:410px;"><img src="https://i.pravatar.cc/100?img=12">🇯🇵 Japão</div>
-<div class="time" style="top:190px; left:540px;"><img src="https://i.pravatar.cc/100?img=13">🇰🇷 Coreia</div>
-<div class="time" style="top:190px; left:670px;"><img src="https://i.pravatar.cc/100?img=14">🇺🇾 Uruguai</div>
-<div class="time" style="top:190px; left:800px;"><img src="https://i.pravatar.cc/100?img=15">🇨🇴 Colômbia</div>
-<div class="time" style="top:190px; left:930px;"><img src="https://i.pravatar.cc/100?img=16">🇭🇷 Croácia</div>
-
-<div class="time" style="top:360px; left:20px;"><img src="https://i.pravatar.cc/100?img=17">🇲🇦 Marrocos</div>
-<div class="time" style="top:360px; left:150px;"><img src="https://i.pravatar.cc/100?img=18">🇸🇳 Senegal</div>
-<div class="time" style="top:360px; left:280px;"><img src="https://i.pravatar.cc/100?img=19">🇳🇬 Nigéria</div>
-<div class="time" style="top:360px; left:410px;"><img src="https://i.pravatar.cc/100?img=20">🇪🇬 Egito</div>
-<div class="time" style="top:360px; left:540px;"><img src="https://i.pravatar.cc/100?img=21">🇦🇺 Austrália</div>
-<div class="time" style="top:360px; left:670px;"><img src="https://i.pravatar.cc/100?img=22">🇸🇪 Suécia</div>
-<div class="time" style="top:360px; left:800px;"><img src="https://i.pravatar.cc/100?img=23">🇵🇪 Peru</div>
-<div class="time" style="top:360px; left:930px;"><img src="https://i.pravatar.cc/100?img=24">🇬🇷 Grécia</div>
-
-<div class="time" style="top:530px; left:20px;"><img src="https://i.pravatar.cc/100?img=25">🇨🇭 Suíça</div>
-<div class="time" style="top:530px; left:150px;"><img src="https://i.pravatar.cc/100?img=26">🇩🇰 Dinamarca</div>
-<div class="time" style="top:530px; left:280px;"><img src="https://i.pravatar.cc/100?img=27">🇵🇱 Polônia</div>
-<div class="time" style="top:530px; left:410px;"><img src="https://i.pravatar.cc/100?img=28">🇷🇸 Sérvia</div>
-<div class="time" style="top:530px; left:540px;"><img src="https://i.pravatar.cc/100?img=29">🇨🇿 Tcheca</div>
-<div class="time" style="top:530px; left:670px;"><img src="https://i.pravatar.cc/100?img=30">🇹🇷 Turquia</div>
-<div class="time" style="top:530px; left:800px;"><img src="https://i.pravatar.cc/100?img=31">🇺🇦 Ucrânia</div>
-<div class="time" style="top:530px; left:930px;"><img src="https://i.pravatar.cc/100?img=32">🇦🇹 Áustria</div>
-
-<div class="time" style="top:700px; left:20px;"><img src="https://i.pravatar.cc/100?img=33">🇷🇴 Romênia</div>
-<div class="time" style="top:700px; left:150px;"><img src="https://i.pravatar.cc/100?img=34">🇮🇷 Irã</div>
-<div class="time" style="top:700px; left:280px;"><img src="https://i.pravatar.cc/100?img=35">🇶🇦 Catar</div>
-<div class="time" style="top:700px; left:410px;"><img src="https://i.pravatar.cc/100?img=36">🇹🇳 Tunísia</div>
-<div class="time" style="top:700px; left:540px;"><img src="https://i.pravatar.cc/100?img=37">🇩🇿 Argélia</div>
-<div class="time" style="top:700px; left:670px;"><img src="https://i.pravatar.cc/100?img=38">🇨🇷 Costa Rica</div>
-<div class="time" style="top:700px; left:800px;"><img src="https://i.pravatar.cc/100?img=39">🇵🇦 Panamá</div>
-<div class="time" style="top:700px; left:930px;"><img src="https://i.pravatar.cc/100?img=40">🇨🇱 Chile</div>
-
-<div class="time" style="top:870px; left:20px;"><img src="https://i.pravatar.cc/100?img=41">🇪🇨 Equador</div>
-<div class="time" style="top:870px; left:150px;"><img src="https://i.pravatar.cc/100?img=42">🇵🇾 Paraguai</div>
-<div class="time" style="top:870px; left:280px;"><img src="https://i.pravatar.cc/100?img=43">🇨🇲 Camarões</div>
-<div class="time" style="top:870px; left:410px;"><img src="https://i.pravatar.cc/100?img=44">🇬🇭 Gana</div>
-<div class="time" style="top:870px; left:540px;"><img src="https://i.pravatar.cc/100?img=45">🇳🇿 Nova Zelândia</div>
-<div class="time" style="top:870px; left:670px;"><img src="https://i.pravatar.cc/100?img=46">🇸🇦 Arábia</div>
-<div class="time" style="top:870px; left:800px;"><img src="https://i.pravatar.cc/100?img=47">🇭🇺 Hungria</div>
-<div class="time" style="top:870px; left:930px;"><img src="https://i.pravatar.cc/100?img=48">🇧🇪 Bélgica</div>
-
-</div>
+<div class="score">
+2022
 </div>
 
-<!-- JOGOS -->
+</div>
 
-<div class="card jogos" id="jogos">
+<div class="match">
 
-<h2 style="font-size:38px; color:#ffdf00;">
-🔥 Próximos Jogos
-</h2>
+<div class="teams">
+🇫🇷 França
+</div>
 
-<div class="jogo">🇧🇷 Brasil 🆚 🇦🇷 Argentina — 18:00</div>
-<div class="jogo">🇫🇷 França 🆚 🇩🇪 Alemanha — 20:00</div>
-<div class="jogo">🏴 Inglaterra 🆚 🇪🇸 Espanha — 16:00</div>
-<div class="jogo">🇵🇹 Portugal 🆚 🇮🇹 Itália — 22:00</div>
-<div class="jogo">🇺🇸 EUA 🆚 🇲🇽 México — 19:00</div>
-<div class="jogo">🇨🇦 Canadá 🆚 🇯🇵 Japão — 21:00</div>
+<div class="score">
+2018
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="teams">
+🇩🇪 Alemanha
+</div>
+
+<div class="score">
+2014
+</div>
+
+</div>
+
+<div class="match">
+
+<div class="teams">
+🇪🇸 Espanha
+</div>
+
+<div class="score">
+2010
+</div>
 
 </div>
 
 </div>
 
-<footer>
-⚽ Copa do Mundo 2026 • Site Oficial
-</footer>
+</section>
 
-<script>
+<!-- COLE ESTA SECTION DOS JOGADORES -->
 
-function entrarSite(){
-    alert("Bem-vindo à Copa do Mundo 2026!");
-}
+<section id="jogadores" class="section">
 
-function mostrarJogos(){
+<div class="card">
 
-    document.getElementById("jogos")
-    .style.display = "block";
+<h2>⭐ Grandes Jogadores</h2>
 
-    document.getElementById("jogos")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
+<div class="grid">
 
-}
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Vinicius_Junior_2023.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇧🇷 Vinicius Jr
+</div>
 
-</script>
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Lionel_Messi_2022.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇦🇷 Messi
+</div>
 
-</body>
-</html>
-```
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kylian_Mbappe_2022.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇫🇷 Mbappé
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Jude_Bellingham_2023.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🏴 Bellingham
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Cristiano_Ronaldo_2018.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇵🇹 Cristiano Ronaldo
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Neymar_2018.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇧🇷 Neymar
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Erling_Haaland_2023.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇳🇴 Haaland
+</div>
+
+<div class="team">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/02/Kevin_De_Bruyne_201807091.jpg"
+style="width:100px;height:100px;border-radius:50%;"><br><br>
+🇧🇪 De Bruyne
+</div>
+
+</div>
+
+</div>
+
+</section>
