@@ -18,7 +18,7 @@
 }
 
 body{
-    background:linear-gradient(to bottom,#002776,#009b3a);
+    background:#002776;
     color:white;
     overflow-x:hidden;
 }
@@ -37,11 +37,10 @@ body::before{
     linear-gradient(rgba(0,0,0,0.6),
     rgba(0,0,0,0.6)),
 
-    url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop');
+    url('https://wallpapercave.com/wp/wp8605008.jpg');
 
     background-size:cover;
     background-position:center;
-
     z-index:-1;
 }
 
@@ -54,20 +53,21 @@ body::before{
     display:flex;
     justify-content:center;
     align-items:center;
-    z-index:99999;
+    z-index:9999;
 }
 
 .caixa-senha{
-    background:rgba(0,0,0,0.7);
+    background:rgba(0,0,0,0.8);
     padding:50px;
     border-radius:25px;
     text-align:center;
     width:90%;
     max-width:500px;
-    border:3px solid #ffdf00;
+    border:4px solid #ffdf00;
+    box-shadow:0 0 30px #ffdf00;
 }
 
-/* LED */
+/* TITULO LED */
 
 .titulo-led{
 
@@ -75,7 +75,7 @@ body::before{
     color:white;
 
     text-shadow:
-    0 0 10px white,
+    0 0 10px #ffffff,
     0 0 20px #002776,
     0 0 40px #002776,
     0 0 60px #ffdf00,
@@ -102,11 +102,11 @@ body::before{
 .input-senha{
 
     width:100%;
-    padding:16px;
+    padding:18px;
     margin-top:25px;
     border:none;
-    border-radius:12px;
-    font-size:20px;
+    border-radius:15px;
+    font-size:22px;
     text-align:center;
 
 }
@@ -115,11 +115,11 @@ body::before{
 
 .btn-entrar{
 
-    margin-top:20px;
+    margin-top:25px;
     background:#ffdf00;
     color:black;
     border:none;
-    padding:15px 35px;
+    padding:16px 40px;
     border-radius:15px;
     font-size:22px;
     font-weight:bold;
@@ -184,22 +184,23 @@ header{
 
     text-align:center;
     padding:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.5);
 
 }
 
 header h1{
-    font-size:50px;
+    font-size:55px;
 }
 
 header p{
     margin-top:10px;
-    font-size:22px;
+    font-size:24px;
 }
 
 /* MENU */
 
 nav{
-    background:#002776;
+    background:#001a4d;
     display:flex;
     justify-content:center;
     gap:15px;
@@ -209,13 +210,15 @@ nav{
 
 nav button{
 
-    padding:12px 22px;
+    padding:14px 25px;
     border:none;
     border-radius:12px;
     background:#009b3a;
     color:white;
     font-weight:bold;
+    font-size:18px;
     cursor:pointer;
+    transition:0.3s;
 
 }
 
@@ -223,6 +226,7 @@ nav button:hover{
 
     background:#ffdf00;
     color:black;
+    transform:scale(1.05);
 
 }
 
@@ -255,11 +259,13 @@ nav button:hover{
     border:6px solid white;
     border-radius:20px;
     position:relative;
-    height:750px;
+    height:850px;
     overflow:hidden;
     margin-top:20px;
 
 }
+
+/* LINHAS */
 
 .linha{
     position:absolute;
@@ -272,8 +278,8 @@ nav button:hover{
 .circulo{
 
     position:absolute;
-    width:150px;
-    height:150px;
+    width:160px;
+    height:160px;
     border:4px solid white;
     border-radius:50%;
     top:50%;
@@ -288,22 +294,38 @@ nav button:hover{
 
     position:absolute;
     background:#002776;
-    padding:8px 12px;
-    border-radius:12px;
+    padding:10px 14px;
+    border-radius:14px;
     border:2px solid white;
     font-size:14px;
     font-weight:bold;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
 
+}
+
+/* JOGOS */
+
+.jogos{
+    margin-top:30px;
+}
+
+.jogo{
+    background:#002776;
+    padding:18px;
+    border-radius:15px;
+    margin-top:15px;
+    font-size:22px;
 }
 
 /* FOOTER */
 
 footer{
 
-    background:#002776;
+    background:#001a4d;
     text-align:center;
     padding:20px;
     margin-top:40px;
+    font-size:20px;
 
 }
 
@@ -341,7 +363,8 @@ ENTRAR
 
 </button>
 
-<p style="margin-top:20px; font-size:20px;">
+<p style="margin-top:20px; font-size:22px;">
+Senha: <strong>neymar</strong>
 </p>
 
 </div>
@@ -378,26 +401,46 @@ ENTRAR
 
 <nav>
 
-<button>
+<button onclick="rolar('inicio')">
 Início
 </button>
 
-<button>
+<button onclick="rolar('campo')">
 Campo
 </button>
 
-<button>
-Seleções
+<button onclick="rolar('jogos')">
+Jogos
 </button>
 
 </nav>
 
 <div class="container">
 
-<div class="card">
+<!-- INICIO -->
+
+<div class="card" id="inicio">
 
 <h2 style="font-size:40px;">
-🏆 Campo das Seleções
+🏆 Sobre a Copa
+</h2>
+
+<p style="margin-top:20px; line-height:35px; font-size:22px;">
+
+A Copa do Mundo 2026 será histórica com 48 seleções.
+O torneio será realizado nos Estados Unidos, México e Canadá.
+Milhões de torcedores irão acompanhar os jogos e vibrar com as seleções.
+
+</p>
+
+</div>
+
+<!-- CAMPO -->
+
+<div class="card" id="campo">
+
+<h2 style="font-size:40px;">
+⚽ Campo das Seleções
 </h2>
 
 <div class="campo">
@@ -405,26 +448,62 @@ Seleções
 <div class="linha"></div>
 <div class="circulo"></div>
 
-<div class="time" style="top:20px; left:20px;">🇧🇷 Brasil</div>
-<div class="time" style="top:20px; left:180px;">🇦🇷 Argentina</div>
-<div class="time" style="top:20px; left:340px;">🇫🇷 França</div>
-<div class="time" style="top:20px; left:500px;">🇩🇪 Alemanha</div>
+<div class="time" style="top:20px; left:20px;">🇧🇷 Brasil - Neymar</div>
+<div class="time" style="top:20px; left:220px;">🇦🇷 Argentina - Messi</div>
+<div class="time" style="top:20px; left:420px;">🇫🇷 França - Mbappé</div>
+<div class="time" style="top:20px; left:620px;">🇩🇪 Alemanha - Müller</div>
 
-<div class="time" style="top:100px; left:20px;">🏴 Inglaterra</div>
-<div class="time" style="top:100px; left:180px;">🇪🇸 Espanha</div>
-<div class="time" style="top:100px; left:340px;">🇵🇹 Portugal</div>
-<div class="time" style="top:100px; left:500px;">🇮🇹 Itália</div>
+<div class="time" style="top:100px; left:20px;">🏴 Inglaterra - Kane</div>
+<div class="time" style="top:100px; left:220px;">🇪🇸 Espanha - Pedri</div>
+<div class="time" style="top:100px; left:420px;">🇵🇹 Portugal - Cristiano</div>
+<div class="time" style="top:100px; left:620px;">🇮🇹 Itália - Chiesa</div>
 
-<div class="time" style="top:180px; left:20px;">🇺🇸 EUA</div>
-<div class="time" style="top:180px; left:180px;">🇲🇽 México</div>
-<div class="time" style="top:180px; left:340px;">🇨🇦 Canadá</div>
-<div class="time" style="top:180px; left:500px;">🇯🇵 Japão</div>
+<div class="time" style="top:180px; left:20px;">🇺🇸 EUA - Pulisic</div>
+<div class="time" style="top:180px; left:220px;">🇲🇽 México - Lozano</div>
+<div class="time" style="top:180px; left:420px;">🇨🇦 Canadá - Davies</div>
+<div class="time" style="top:180px; left:620px;">🇯🇵 Japão - Kubo</div>
 
-<div class="time" style="top:260px; left:20px;">🇺🇾 Uruguai</div>
-<div class="time" style="top:260px; left:180px;">🇨🇴 Colômbia</div>
-<div class="time" style="top:260px; left:340px;">🇭🇷 Croácia</div>
-<div class="time" style="top:260px; left:500px;">🇲🇦 Marrocos</div>
+<div class="time" style="top:260px; left:20px;">🇺🇾 Uruguai - Suárez</div>
+<div class="time" style="top:260px; left:220px;">🇨🇴 Colômbia - James</div>
+<div class="time" style="top:260px; left:420px;">🇭🇷 Croácia - Modric</div>
+<div class="time" style="top:260px; left:620px;">🇲🇦 Marrocos - Hakimi</div>
 
+<div class="time" style="top:340px; left:20px;">🇸🇳 Senegal - Mané</div>
+<div class="time" style="top:340px; left:220px;">🇳🇬 Nigéria - Osimhen</div>
+<div class="time" style="top:340px; left:420px;">🇪🇬 Egito - Salah</div>
+<div class="time" style="top:340px; left:620px;">🇦🇺 Austrália - Duke</div>
+
+<div class="time" style="top:420px; left:20px;">🇰🇷 Coreia - Son</div>
+<div class="time" style="top:420px; left:220px;">🇸🇦 Arábia - Salem</div>
+<div class="time" style="top:420px; left:420px;">🇵🇱 Polônia - Lewandowski</div>
+<div class="time" style="top:420px; left:620px;">🇷🇸 Sérvia - Vlahovic</div>
+
+</div>
+
+</div>
+
+<!-- JOGOS -->
+
+<div class="card jogos" id="jogos">
+
+<h2 style="font-size:40px;">
+🔥 Próximos Jogos
+</h2>
+
+<div class="jogo">
+🇧🇷 Brasil 🆚 🇦🇷 Argentina — 18:00
+</div>
+
+<div class="jogo">
+🇫🇷 França 🆚 🇩🇪 Alemanha — 20:00
+</div>
+
+<div class="jogo">
+🏴 Inglaterra 🆚 🇪🇸 Espanha — 16:00
+</div>
+
+<div class="jogo">
+🇵🇹 Portugal 🆚 🇮🇹 Itália — 22:00
 </div>
 
 </div>
@@ -448,9 +527,7 @@ function verificarSenha(){
     let senha =
     document.getElementById("senha").value;
 
-    /* SENHA */
-
-    if(senha === "ney"){
+    if(senha.toLowerCase() === "neymar"){
 
         document.getElementById("telaSenha")
         .style.display = "none";
@@ -462,9 +539,20 @@ function verificarSenha(){
 
     else{
 
-        alert("Senha incorreta!");
+        alert("Senha incorreta! A senha é: neymar");
 
     }
+
+}
+
+/* ROLAR */
+
+function rolar(id){
+
+    document.getElementById(id)
+    .scrollIntoView({
+        behavior:"smooth"
+    });
 
 }
 
