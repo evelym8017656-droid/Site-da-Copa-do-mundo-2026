@@ -1,10 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Copa do Mundo 2026</title>
 
 <style>
@@ -32,7 +31,7 @@ body::before{
     top:0;
     left:0;
     background:url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1600&auto=format&fit=crop') center/cover;
-    filter:brightness(0.4);
+    filter:brightness(0.3);
     z-index:-2;
 }
 
@@ -75,20 +74,31 @@ body::before{
     align-items:center;
     flex-direction:column;
     text-align:center;
-    background:rgba(0,0,0,0.6);
+    background:rgba(0,0,0,0.7);
+    position:relative;
+}
+
+.entrada::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:url('neyma') center/cover;
+    opacity:0.45;
+    z-index:-1;
 }
 
 .led{
-    font-size:80px;
+    font-size:90px;
     font-weight:bold;
-    color:#ffdf00;
+    color:#ffffff;
 
     text-shadow:
-    0 0 10px #ffdf00,
-    0 0 20px #ffdf00,
+    0 0 10px #ffffff,
+    0 0 20px #002776,
     0 0 40px #002776,
-    0 0 60px #002776,
-    0 0 80px #002776;
+    0 0 60px #ffdf00,
+    0 0 80px #ffdf00;
 
     animation:piscando 1s infinite alternate;
 }
@@ -107,7 +117,9 @@ body::before{
 
 .sub{
     margin-top:20px;
-    font-size:28px;
+    font-size:30px;
+    color:#ffdf00;
+    font-weight:bold;
 }
 
 .botoes{
@@ -166,7 +178,7 @@ body::before{
 /* CONTAINER */
 
 .container{
-    max-width:1400px;
+    max-width:1500px;
     margin:auto;
     padding:20px;
 }
@@ -187,7 +199,7 @@ body::before{
     background:url('https://images.unsplash.com/photo-1486286701208-1d58e9338013?q=80&w=1600&auto=format&fit=crop') center/cover;
     border:6px solid white;
     border-radius:20px;
-    min-height:900px;
+    min-height:1400px;
     position:relative;
     overflow:hidden;
 }
@@ -196,7 +208,7 @@ body::before{
 
 .time{
     position:absolute;
-    width:95px;
+    width:100px;
     text-align:center;
     color:white;
     font-size:12px;
@@ -204,8 +216,8 @@ body::before{
 }
 
 .time img{
-    width:65px;
-    height:65px;
+    width:70px;
+    height:70px;
     border-radius:50%;
     border:3px solid #ffdf00;
     object-fit:cover;
@@ -234,7 +246,6 @@ footer{
 }
 
 </style>
-
 </head>
 
 <body>
@@ -242,17 +253,15 @@ footer{
 <!-- CHUVA -->
 
 <div class="chuva">
-
 <div class="item" style="left:5%; animation-duration:8s;">🇧🇷</div>
 <div class="item" style="left:15%; animation-duration:12s;">🏆</div>
 <div class="item" style="left:25%; animation-duration:10s;">⚽</div>
-<div class="item" style="left:35%; animation-duration:14s;">🇧🇷</div>
+<div class="item" style="left:35%; animation-duration:14s;">🇦🇷</div>
 <div class="item" style="left:45%; animation-duration:9s;">🏆</div>
 <div class="item" style="left:55%; animation-duration:11s;">⚽</div>
-<div class="item" style="left:65%; animation-duration:13s;">🇧🇷</div>
+<div class="item" style="left:65%; animation-duration:13s;">🇫🇷</div>
 <div class="item" style="left:75%; animation-duration:7s;">🏆</div>
 <div class="item" style="left:85%; animation-duration:15s;">⚽</div>
-
 </div>
 
 <!-- ENTRADA -->
@@ -269,18 +278,12 @@ Brasil • Estados Unidos • Canadá • México
 
 <div class="botoes">
 
-<button class="btn btn-entrar"
-onclick="entrarSite()">
-
+<button class="btn btn-entrar" onclick="entrarSite()">
 ENTRAR NO CAMPO
-
 </button>
 
-<button class="btn btn-jogos"
-onclick="mostrarJogos()">
-
+<button class="btn btn-jogos" onclick="mostrarJogos()">
 VER QUEM VAI JOGAR
-
 </button>
 
 </div>
@@ -290,19 +293,9 @@ VER QUEM VAI JOGAR
 <!-- MENU -->
 
 <div class="menu">
-
-<button onclick="window.scrollTo(0,0)">
-Início
-</button>
-
-<button onclick="document.getElementById('campo').scrollIntoView()">
-Campo
-</button>
-
-<button onclick="document.getElementById('jogos').scrollIntoView()">
-Jogos
-</button>
-
+<button onclick="window.scrollTo(0,0)">Início</button>
+<button onclick="document.getElementById('campo').scrollIntoView()">Campo</button>
+<button onclick="document.getElementById('jogos').scrollIntoView()">Jogos</button>
 </div>
 
 <div class="container">
@@ -311,7 +304,7 @@ Jogos
 
 <div class="card" id="campo">
 
-<h2 style="font-size:40px; text-align:center;">
+<h2 style="font-size:45px; text-align:center; color:#ffdf00;">
 🏆 Campo das 48 Seleções
 </h2>
 
@@ -319,178 +312,92 @@ Jogos
 
 <div class="campo">
 
-<!-- EXEMPLOS DOS TIMES -->
+<!-- 48 TIMES -->
 
-<div class="time" style="top:20px; left:20px;">
-<img src="https://i.pravatar.cc/100?img=1">
-🇧🇷 Brasil
-</div>
+<div class="time" style="top:20px; left:20px;"><img src="https://i.pravatar.cc/100?img=1">🇧🇷 Brasil</div>
+<div class="time" style="top:20px; left:150px;"><img src="https://i.pravatar.cc/100?img=2">🇦🇷 Argentina</div>
+<div class="time" style="top:20px; left:280px;"><img src="https://i.pravatar.cc/100?img=3">🇫🇷 França</div>
+<div class="time" style="top:20px; left:410px;"><img src="https://i.pravatar.cc/100?img=4">🇩🇪 Alemanha</div>
+<div class="time" style="top:20px; left:540px;"><img src="https://i.pravatar.cc/100?img=5">🏴 Inglaterra</div>
+<div class="time" style="top:20px; left:670px;"><img src="https://i.pravatar.cc/100?img=6">🇪🇸 Espanha</div>
+<div class="time" style="top:20px; left:800px;"><img src="https://i.pravatar.cc/100?img=7">🇵🇹 Portugal</div>
+<div class="time" style="top:20px; left:930px;"><img src="https://i.pravatar.cc/100?img=8">🇮🇹 Itália</div>
 
-<div class="time" style="top:20px; left:140px;">
-<img src="https://i.pravatar.cc/100?img=2">
-🇦🇷 Argentina
-</div>
+<div class="time" style="top:190px; left:20px;"><img src="https://i.pravatar.cc/100?img=9">🇺🇸 EUA</div>
+<div class="time" style="top:190px; left:150px;"><img src="https://i.pravatar.cc/100?img=10">🇲🇽 México</div>
+<div class="time" style="top:190px; left:280px;"><img src="https://i.pravatar.cc/100?img=11">🇨🇦 Canadá</div>
+<div class="time" style="top:190px; left:410px;"><img src="https://i.pravatar.cc/100?img=12">🇯🇵 Japão</div>
+<div class="time" style="top:190px; left:540px;"><img src="https://i.pravatar.cc/100?img=13">🇰🇷 Coreia</div>
+<div class="time" style="top:190px; left:670px;"><img src="https://i.pravatar.cc/100?img=14">🇺🇾 Uruguai</div>
+<div class="time" style="top:190px; left:800px;"><img src="https://i.pravatar.cc/100?img=15">🇨🇴 Colômbia</div>
+<div class="time" style="top:190px; left:930px;"><img src="https://i.pravatar.cc/100?img=16">🇭🇷 Croácia</div>
 
-<div class="time" style="top:20px; left:260px;">
-<img src="https://i.pravatar.cc/100?img=3">
-🇫🇷 França
-</div>
+<div class="time" style="top:360px; left:20px;"><img src="https://i.pravatar.cc/100?img=17">🇲🇦 Marrocos</div>
+<div class="time" style="top:360px; left:150px;"><img src="https://i.pravatar.cc/100?img=18">🇸🇳 Senegal</div>
+<div class="time" style="top:360px; left:280px;"><img src="https://i.pravatar.cc/100?img=19">🇳🇬 Nigéria</div>
+<div class="time" style="top:360px; left:410px;"><img src="https://i.pravatar.cc/100?img=20">🇪🇬 Egito</div>
+<div class="time" style="top:360px; left:540px;"><img src="https://i.pravatar.cc/100?img=21">🇦🇺 Austrália</div>
+<div class="time" style="top:360px; left:670px;"><img src="https://i.pravatar.cc/100?img=22">🇸🇪 Suécia</div>
+<div class="time" style="top:360px; left:800px;"><img src="https://i.pravatar.cc/100?img=23">🇵🇪 Peru</div>
+<div class="time" style="top:360px; left:930px;"><img src="https://i.pravatar.cc/100?img=24">🇬🇷 Grécia</div>
 
-<div class="time" style="top:20px; left:380px;">
-<img src="https://i.pravatar.cc/100?img=4">
-🇩🇪 Alemanha
-</div>
+<div class="time" style="top:530px; left:20px;"><img src="https://i.pravatar.cc/100?img=25">🇨🇭 Suíça</div>
+<div class="time" style="top:530px; left:150px;"><img src="https://i.pravatar.cc/100?img=26">🇩🇰 Dinamarca</div>
+<div class="time" style="top:530px; left:280px;"><img src="https://i.pravatar.cc/100?img=27">🇵🇱 Polônia</div>
+<div class="time" style="top:530px; left:410px;"><img src="https://i.pravatar.cc/100?img=28">🇷🇸 Sérvia</div>
+<div class="time" style="top:530px; left:540px;"><img src="https://i.pravatar.cc/100?img=29">🇨🇿 Tcheca</div>
+<div class="time" style="top:530px; left:670px;"><img src="https://i.pravatar.cc/100?img=30">🇹🇷 Turquia</div>
+<div class="time" style="top:530px; left:800px;"><img src="https://i.pravatar.cc/100?img=31">🇺🇦 Ucrânia</div>
+<div class="time" style="top:530px; left:930px;"><img src="https://i.pravatar.cc/100?img=32">🇦🇹 Áustria</div>
 
-<div class="time" style="top:20px; left:500px;">
-<img src="https://i.pravatar.cc/100?img=5">
-🏴 Inglaterra
-</div>
+<div class="time" style="top:700px; left:20px;"><img src="https://i.pravatar.cc/100?img=33">🇷🇴 Romênia</div>
+<div class="time" style="top:700px; left:150px;"><img src="https://i.pravatar.cc/100?img=34">🇮🇷 Irã</div>
+<div class="time" style="top:700px; left:280px;"><img src="https://i.pravatar.cc/100?img=35">🇶🇦 Catar</div>
+<div class="time" style="top:700px; left:410px;"><img src="https://i.pravatar.cc/100?img=36">🇹🇳 Tunísia</div>
+<div class="time" style="top:700px; left:540px;"><img src="https://i.pravatar.cc/100?img=37">🇩🇿 Argélia</div>
+<div class="time" style="top:700px; left:670px;"><img src="https://i.pravatar.cc/100?img=38">🇨🇷 Costa Rica</div>
+<div class="time" style="top:700px; left:800px;"><img src="https://i.pravatar.cc/100?img=39">🇵🇦 Panamá</div>
+<div class="time" style="top:700px; left:930px;"><img src="https://i.pravatar.cc/100?img=40">🇨🇱 Chile</div>
 
-<div class="time" style="top:20px; left:620px;">
-<img src="https://i.pravatar.cc/100?img=6">
-🇪🇸 Espanha
-</div>
-
-<div class="time" style="top:20px; left:740px;">
-<img src="https://i.pravatar.cc/100?img=7">
-🇵🇹 Portugal
-</div>
-
-<div class="time" style="top:20px; left:860px;">
-<img src="https://i.pravatar.cc/100?img=8">
-🇮🇹 Itália
-</div>
-
-<!-- LINHA 2 -->
-
-<div class="time" style="top:180px; left:20px;">
-<img src="https://i.pravatar.cc/100?img=9">
-🇺🇸 EUA
-</div>
-
-<div class="time" style="top:180px; left:140px;">
-<img src="https://i.pravatar.cc/100?img=10">
-🇲🇽 México
-</div>
-
-<div class="time" style="top:180px; left:260px;">
-<img src="https://i.pravatar.cc/100?img=11">
-🇨🇦 Canadá
-</div>
-
-<div class="time" style="top:180px; left:380px;">
-<img src="https://i.pravatar.cc/100?img=12">
-🇯🇵 Japão
-</div>
-
-<div class="time" style="top:180px; left:500px;">
-<img src="https://i.pravatar.cc/100?img=13">
-🇰🇷 Coreia
-</div>
-
-<div class="time" style="top:180px; left:620px;">
-<img src="https://i.pravatar.cc/100?img=14">
-🇺🇾 Uruguai
-</div>
-
-<div class="time" style="top:180px; left:740px;">
-<img src="https://i.pravatar.cc/100?img=15">
-🇨🇴 Colômbia
-</div>
-
-<div class="time" style="top:180px; left:860px;">
-<img src="https://i.pravatar.cc/100?img=16">
-🇭🇷 Croácia
-</div>
-
-<!-- LINHA 3 -->
-
-<div class="time" style="top:340px; left:20px;">
-<img src="https://i.pravatar.cc/100?img=17">
-🇲🇦 Marrocos
-</div>
-
-<div class="time" style="top:340px; left:140px;">
-<img src="https://i.pravatar.cc/100?img=18">
-🇸🇳 Senegal
-</div>
-
-<div class="time" style="top:340px; left:260px;">
-<img src="https://i.pravatar.cc/100?img=19">
-🇳🇬 Nigéria
-</div>
-
-<div class="time" style="top:340px; left:380px;">
-<img src="https://i.pravatar.cc/100?img=20">
-🇪🇬 Egito
-</div>
-
-<div class="time" style="top:340px; left:500px;">
-<img src="https://i.pravatar.cc/100?img=21">
-🇦🇺 Austrália
-</div>
-
-<div class="time" style="top:340px; left:620px;">
-<img src="https://i.pravatar.cc/100?img=22">
-🇸🇪 Suécia
-</div>
-
-<div class="time" style="top:340px; left:740px;">
-<img src="https://i.pravatar.cc/100?img=23">
-🇵🇪 Peru
-</div>
-
-<div class="time" style="top:340px; left:860px;">
-<img src="https://i.pravatar.cc/100?img=24">
-🇬🇷 Grécia
-</div>
-
-<!-- COMPLETE ATÉ 48 TIMES -->
+<div class="time" style="top:870px; left:20px;"><img src="https://i.pravatar.cc/100?img=41">🇪🇨 Equador</div>
+<div class="time" style="top:870px; left:150px;"><img src="https://i.pravatar.cc/100?img=42">🇵🇾 Paraguai</div>
+<div class="time" style="top:870px; left:280px;"><img src="https://i.pravatar.cc/100?img=43">🇨🇲 Camarões</div>
+<div class="time" style="top:870px; left:410px;"><img src="https://i.pravatar.cc/100?img=44">🇬🇭 Gana</div>
+<div class="time" style="top:870px; left:540px;"><img src="https://i.pravatar.cc/100?img=45">🇳🇿 Nova Zelândia</div>
+<div class="time" style="top:870px; left:670px;"><img src="https://i.pravatar.cc/100?img=46">🇸🇦 Arábia</div>
+<div class="time" style="top:870px; left:800px;"><img src="https://i.pravatar.cc/100?img=47">🇭🇺 Hungria</div>
+<div class="time" style="top:870px; left:930px;"><img src="https://i.pravatar.cc/100?img=48">🇧🇪 Bélgica</div>
 
 </div>
-
 </div>
 
 <!-- JOGOS -->
 
 <div class="card jogos" id="jogos">
 
-<h2 style="font-size:38px;">
+<h2 style="font-size:38px; color:#ffdf00;">
 🔥 Próximos Jogos
 </h2>
 
-<div class="jogo">
-🇧🇷 Brasil 🆚 🇦🇷 Argentina — 18:00
-</div>
-
-<div class="jogo">
-🇫🇷 França 🆚 🇩🇪 Alemanha — 20:00
-</div>
-
-<div class="jogo">
-🏴 Inglaterra 🆚 🇪🇸 Espanha — 16:00
-</div>
-
-<div class="jogo">
-🇵🇹 Portugal 🆚 🇮🇹 Itália — 22:00
-</div>
+<div class="jogo">🇧🇷 Brasil 🆚 🇦🇷 Argentina — 18:00</div>
+<div class="jogo">🇫🇷 França 🆚 🇩🇪 Alemanha — 20:00</div>
+<div class="jogo">🏴 Inglaterra 🆚 🇪🇸 Espanha — 16:00</div>
+<div class="jogo">🇵🇹 Portugal 🆚 🇮🇹 Itália — 22:00</div>
+<div class="jogo">🇺🇸 EUA 🆚 🇲🇽 México — 19:00</div>
+<div class="jogo">🇨🇦 Canadá 🆚 🇯🇵 Japão — 21:00</div>
 
 </div>
 
 </div>
 
 <footer>
-
 ⚽ Copa do Mundo 2026 • Site Oficial
-
 </footer>
 
 <script>
 
 function entrarSite(){
-
     alert("Bem-vindo à Copa do Mundo 2026!");
-
 }
 
 function mostrarJogos(){
@@ -509,3 +416,4 @@ function mostrarJogos(){
 
 </body>
 </html>
+```
